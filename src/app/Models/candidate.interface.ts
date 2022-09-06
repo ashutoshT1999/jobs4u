@@ -4,6 +4,9 @@ export interface ICandidate{
     FirstName:string;
 	MiddleName:string;
 	LastName:string;
+	Bio:string;
+	Location:String;
+	Education:string;
 	Email:string;
 	DOB: string;
 	Resume: any;
