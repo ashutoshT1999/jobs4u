@@ -1,10 +1,10 @@
 export interface ICompany{
 
-    ID: number;
-	Password: string;
-	CompanyName: string;
-	CompanyType: string;
-	EmailID: string;
-    JobPosted:string[] ;
+    id: number;
+	password: string;
+	companyName: string;
+	companyType: string;
+	emailID: string;
+    jobsPosted:number[] ;
   
 }
