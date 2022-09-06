@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingPageModule } from './Landing_page/landing-page.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { PostedJobsComponent } from './jobDetails/company/posted-jobs/posted-jobs.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostedJobsComponent
   ],
   imports: [
     BrowserModule,
