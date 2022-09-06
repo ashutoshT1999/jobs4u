@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { JobSearchComponent } from './job-search.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobDisplayComponent } from './job-display/job-display.component';
@@ -14,6 +15,7 @@ import { JobDisplayComponent } from './job-display/job-display.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[JobSearchComponent]
 })
 export class JobSearchModule { }
