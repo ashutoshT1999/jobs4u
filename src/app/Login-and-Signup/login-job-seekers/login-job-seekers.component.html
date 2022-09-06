@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+          <div class="form-container margin-top mat-elevation-z5">
+            <form [formGroup]="LoginJobSeekersForm" (ngSubmit)="submit()">
+                <div class="row">
+                <div class="center">
+                    <h1><b>Login</b></h1>
+                </div>
+                </div>  
+                <div class="row margin">
+                  <mat-form-field class="example-form-field" appearance="outline">
+                    <mat-label>email</mat-label>
+                        <input matInput type="text" formControlName="email" >
+                            <mat-error *ngIf="LoginJobSeekersForm.get('email')!.errors!['required']">Email Required</mat-error>
+                            <mat-error *ngIf= " !LoginJobSeekersForm.get('email')!.errors!['required'] && LoginJobSeekersForm.get('email')!.errors!==null">Email Invalid</mat-error>
+                            <!-- <mat-error *ngIf= " !LoginJobSeekersForm.get('email')!.errors!['required'] && LoginJobSeekersForm.get('email')!.errors!==null &&  LoginJobSeekersForm.get('email')!.errors!['emailmismatch']"> -->
+                  </mat-form-field>
+                </div>
+    
+               <div class="row">      
+                 <mat-form-field class="example-form-field" appearance="outline">
+                   <mat-label>password</mat-label>
+                        <input matInput type="text" formControlName="password" >
+                            <mat-error *ngIf="LoginJobSeekersForm.get('password')!.errors!==null && LoginJobSeekersForm.get('password')!.errors!['required']">Password is required</mat-error>
+                 </mat-form-field>
+                </div>
+
+                <div class="center margin ">
+                    <button class="btn btn-outline" type="submit" style="background-color: black;color:white ;">Login</button>
+                </div>
+          
+        
+            </form> 
+        </div>    
+    </div>
+    <div class="col-sm " style="margin-top: 45px;">
+        <img src="https://angel.co/webpack/ddd4595adfcf2880d80e8bf949042bf2.png" style="width: 700px; ">
+    </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'login-job-seekers',
+  selector: 'app-login-job-seekers',
   templateUrl: './login-job-seekers.component.html',
   styleUrls: ['./login-job-seekers.component.css']
 })
@@ -29,3 +29,4 @@ export class LoginJobSeekersComponent implements OnInit {
     
   }
 }
+

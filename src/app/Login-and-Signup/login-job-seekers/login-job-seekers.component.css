@@ -1,15 +1,18 @@
+
 .form-container{
     display: block;
-    max-width:300px;
+    max-width:350px;
     margin:auto;
 
-    background-color:azure;
+    background-color:rgb(255, 255, 255);
     padding: 48px;
     border-radius: 8px;
+    
 }
 
 .form-container mat-form-field{
     width:100%;
+    
 }
 
 .center{
@@ -17,9 +20,11 @@
     justify-content: center;
 }
 .margin-top{
-    margin-top: 20px;
+    margin-top: 90px;
 }
-
+.margin{
+    margin-top:25px;
+}
 .text-center{
     text-align: center;
 }
