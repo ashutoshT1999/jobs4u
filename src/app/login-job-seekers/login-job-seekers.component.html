@@ -1,0 +1,44 @@
+<div class="form-container">
+    <form [formGroup]="LoginJobSeekersForm" (ngSubmit)="submit()">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-10">
+                <h1 style="margin-top:30px ;" class="h1-top"><b>Login</b></h1>
+            </div>
+        </div>  
+    
+        <div class="row">
+        <!-- <div class="col-md-2 "> -->
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>email</mat-label>
+                    <input matInput type="text" formControlName="email" >
+                        <mat-error *ngIf="LoginJobSeekersForm.get('email')!.errors!['required']">
+                            Email Required</mat-error>
+                        <mat-error *ngIf= " !LoginJobSeekersForm.get('email')!.errors!['required'] && LoginJobSeekersForm.get('email')!.errors!==null">
+                        <!-- <mat-error *ngIf= " !LoginJobSeekersForm.get('email')!.errors!['required'] && LoginJobSeekersForm.get('email')!.errors!==null &&  LoginJobSeekersForm.get('email')!.errors!['emailmismatch']"> -->
+                            Email Invalid
+                        </mat-error>
+            </mat-form-field>
+        <!-- </div> -->
+      </div>
+
+      <div class="row">  
+      <!-- <div class="col-md-2 "> -->
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>password</mat-label>
+                <input matInput type="text" formControlName="password" >
+                    <mat-error *ngIf="LoginJobSeekersForm.get('password')!.errors!==null && LoginJobSeekersForm.get('password')!.errors!['required']">
+                        Name is required
+                    </mat-error>
+        </mat-form-field>
+        <!-- </div> -->
+    </div>
+    
+    
+    <div class="center margin-top">
+      <div class="col-md-1 ">
+        <button mat-raised-button color="primary" >Create</button>
+        </div>
+      </div>
+    </form>
+</div>
