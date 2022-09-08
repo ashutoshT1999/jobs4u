@@ -1,15 +1,14 @@
 export interface ICandidate{
-    ID:number;
-    Password:string;
-    Firstname:string;
-    Middlename:string;
-    Lastname:string;
-    Email:string;
-    DOB:string;
-    Resume:any;
-    ContactNumber:number;
-    Bio:string;
-    Education:string;
-    Location:string;
-  
+    id:number;
+    password:string;
+    firstName:string;
+    middleName:string;
+    lastName:string;
+    email:string;
+    dob:string;
+    resume:any;
+    contactNumber:number;
+    bio:string;
+    education:string;
+    location:string;
 }

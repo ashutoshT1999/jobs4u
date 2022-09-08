@@ -1,0 +1,8 @@
+.box 
+{
+    -webkit-box-shadow: 0 0 6px rgb(74, 64, 64);
+    box-shadow: 0 0 6px  rgb(74, 64, 64);
+    border-radius:15px;
+    height: 100px;
+};
+

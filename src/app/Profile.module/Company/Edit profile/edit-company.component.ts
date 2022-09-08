@@ -15,13 +15,13 @@ export class EditCompanyComponent implements OnInit {
   }
 
   editCompany = this._fb.group({
-    CompanyName: ['', [Validators.required]],
-    CompanyType: ['', [Validators.required]],
-    CompanyOffices: ['', [Validators.required]],
-    HiringDomains: ['', [Validators.required]],
-    EmailID: ['', [Validators.required, Validators.email]],
-    ContactInfo: ['', [Validators.required]],
-    AboutCompany: ['', [Validators.required]],
+    companyName: ['', [Validators.required]],
+    companyType: ['', [Validators.required]],
+    companyOffices: ['', [Validators.required]],
+    hiringDomains: ['', [Validators.required]],
+    emailID: ['', [Validators.required, Validators.email]],
+    contactInfo: ['', [Validators.required]],
+    aboutCompany: ['', [Validators.required]],
   })
   email = new FormControl('', [Validators.required, Validators.email]);
 

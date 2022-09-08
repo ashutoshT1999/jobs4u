@@ -15,18 +15,18 @@ export class EditComponent implements OnInit {
 
   }
   editCandidate = this._fb.group({
-    ID:'',
-    Password: [''],
-    Firstname: ['',[Validators.required]],
-    Middlename: [''],
-    Lastname: ['',[Validators.required]],
-    Email: ['',[Validators.required,Validators.email]],
-    DOB: ['',[Validators.required]],
-    Resume: [''],
-    ContactNumber: [,[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
-    Bio: ['',[Validators.required]],
-    Education: ['',[Validators.required]],
-    Location: ['',[Validators.required]],
+    id:'',
+    password: [''],
+    firstName: ['',[Validators.required]],
+    middleName: [''],
+    lastName: ['',[Validators.required]],
+    email: ['',[Validators.required,Validators.email]],
+    dob: ['',[Validators.required]],
+    resume: [''],
+    contactNumber: [,[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
+    bio: ['',[Validators.required]],
+    education: ['',[Validators.required]],
+    location: ['',[Validators.required]],
   }) ;
   email = new FormControl('', [Validators.required, Validators.email]);
 
