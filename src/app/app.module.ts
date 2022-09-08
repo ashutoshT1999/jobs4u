@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingPageModule } from './Landing_page/landing-page.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { ProfileModule } from './Profile.module/profile.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,12 +16,13 @@ import { NavbarModule } from './navbar/navbar.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
     LandingPageModule,
-    NavbarModule
+    NavbarModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]
