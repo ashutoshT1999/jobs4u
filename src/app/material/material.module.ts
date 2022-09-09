@@ -13,6 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -20,11 +21,11 @@ import {MatChipsModule} from '@angular/material/chips';
   imports: [
     CommonModule,
     MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule,
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule
+    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule
   ],
   exports: [
     MatFormFieldModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule,ReactiveFormsModule,
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule
+    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule
   ]
 })
 export class MaterialsModule { }
