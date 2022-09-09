@@ -1,0 +1,36 @@
+.screen-height{
+    height: 100vh;
+}
+.form-container{
+    display: block;
+    min-width:350px;
+    background-color:rgb(255, 255, 255);
+    padding: 48px;
+    border-radius: 8px;   
+}
+.form-container mat-form-field{
+    width:100%;   
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+.margin-top{
+    margin-top: 20px;
+}
+
+.text-center{
+    text-align: center;
+}
+.item-center{
+    display: grid;
+    place-content: center;
+}
+.item-left{
+    display: grid;
+    place-content: justify;
+}
+.box-shadow{
+    box-shadow: 13px 5px 19px -9px rgb(112 178 214 / 65%), 8px 22px 23px -10px rgb(112 171 199 / 58%), 0px 6px 28px 5px rgb(103 182 228 / 39%);
+
+}
