@@ -12,4 +12,7 @@ export class PostedJobsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  dialog(){
+    alert("HI!");
+  }
 }

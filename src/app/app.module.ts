@@ -7,13 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingPageModule } from './Landing_page/landing-page.module';
 import { NavbarModule } from './navbar/navbar.module';
-import { PostedJobsComponent } from './jobDetails/company/posted-jobs/posted-jobs.component';
+import { JobDetailsModule } from './job-details/job-details.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostedJobsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +20,8 @@ import { PostedJobsComponent } from './jobDetails/company/posted-jobs/posted-job
     BrowserAnimationsModule,
     NgbModule,
     LandingPageModule,
-    NavbarModule
+    NavbarModule,
+    JobDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

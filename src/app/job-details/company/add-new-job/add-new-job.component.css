@@ -1,0 +1,27 @@
+header{
+    position: relative;
+}
+
+header > h5{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.container{
+    margin-top: 1rem;
+}
+
+mat-form-field-flex{
+    background-color: red;
+}
+
+.custom-chip{
+    margin: 0 !important;
+    margin-right: 4px !important;
+    font-size: 10px;
+    min-height: 22px;
+    height: 1px;
+}

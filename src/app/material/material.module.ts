@@ -9,17 +9,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatFormFieldModule, MatInputModule, MatDialogModule,
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule,MatToolbarModule
+    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule,MatToolbarModule,MatChipsModule,MatIconModule
   ],
   exports: [
     MatFormFieldModule, MatInputModule, MatDialogModule, 
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule,MatToolbarModule
+    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule,MatToolbarModule, MatChipsModule, MatIconModule
   ]
 })
 export class MaterialsModule { }

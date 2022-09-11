@@ -6,6 +6,27 @@ body {
     align-items: center;
 }
 
+/* .secondarybtn{
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    color:black;
+} */
+
+/* .primarybtn{
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: black;
+    color:white;
+} */
+
+button{
+    margin-top: 10px;
+}
 .btn {
     margin-top: 10px;
     width: 120px;
