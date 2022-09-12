@@ -32,16 +32,12 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
     LoginAndSignupModule,
     LandingPageModule,
     NavbarModule,
+    NavbarOtherModule,
     JobDetailsModule,
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
-<<<<<<< HEAD
-    HttpClientModule,NavbarOtherModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataSourceService)
-=======
     HttpClientModule,
     InMemoryWebApiModule.forRoot(DataSourceService)
->>>>>>> 3f63e6522a1e10a4c1bd530b10b9f788b264eb0e
   ],
   providers: [CompaniesService, CandidatesService, DataSourceService],
   bootstrap: [AppComponent]

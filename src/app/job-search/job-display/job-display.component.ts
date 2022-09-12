@@ -7,8 +7,18 @@ import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
   styleUrls: ['./job-display.component.css']
 })
 export class JobDisplayComponent implements OnInit {
-  job:any={
-    html_job_description:''
+  job:any={ 
+    id: 1,
+    job_title: "",
+    category: "",
+    company_name: "",
+    city: "",
+    country: "",
+    post_date: "",
+    job_type: "",
+    salary_offered: "",
+    valid_through: "",
+    html_job_description:``
   }
 
   constructor(private _jobService:JobsServices) { }
