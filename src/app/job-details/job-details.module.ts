@@ -7,6 +7,7 @@ import { AppliedJobsComponent } from './candidate/applied-jobs/applied-jobs.comp
 import { materialize } from 'rxjs';
 import { MaterialsModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostedJobDialog } from './company/posted-jobs/complete-description/completeDescription.dialog';
 
 
 
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PostedJobsComponent,
     EditJobsComponent,
     AddNewJobComponent,
-    AppliedJobsComponent
+    AppliedJobsComponent,
+    PostedJobDialog
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddNewJobComponent,
     EditJobsComponent,
     PostedJobsComponent,
-    AppliedJobsComponent
+    AppliedJobsComponent,
+    PostedJobDialog
   ]
 })
 export class JobDetailsModule { }
