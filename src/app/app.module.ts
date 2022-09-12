@@ -31,7 +31,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     LoginAndSignupModule,
     LandingPageModule,
     NavbarModule,
-    JobDetailsModule
+    JobDetailsModule,
     ProfileModule, PageNotFoundModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataSourceService)
