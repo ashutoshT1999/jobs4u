@@ -10,11 +10,11 @@
                     </div>
                     <div>
                         <div
-                            style="padding-top: 50px;padding-left:30px;padding-bottom:10px ;font-size: 20px;font-weight: 500;">
-                           Company Name:
+                            style="padding-top: 50px;padding-left:20px;padding-bottom:10px ;font-size: 20px;font-weight: 500;">
+                            Company Name: <span>{{companyDataBySubject[0].companyName}}</span>
                         </div>
-                        <div style="padding-left:30px;font-size: 20px;font-weight: 500;padding-bottom:10px ;">
-                            Company Domain(s):
+                        <div style="padding-left:20px;font-size: 20px;font-weight: 500;padding-bottom:10px ;">
+                            Company Domain(s):<span>{{companyDataBySubject[0].companyType}}</span>
                         </div>
                     </div>
                 </div>
@@ -22,11 +22,11 @@
             <div class="col-6">
                 <div class="d-flex flex-row" style="padding:50px ;padding-left:200px">
                     <div style="padding-right:20px;padding-top:5px ;">
-                      
-                            <div>
-                                <a href="" style="text-decoration: none;">View jobs you posted</a>
-                            </div>
-                       
+
+                        <div>
+                            <a href="" style="text-decoration: none;">View jobs you posted</a>
+                        </div>
+
                     </div>
                     <div style="padding-right:30px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
@@ -54,49 +54,67 @@
         </div>
     </div>
     <div class="container mb-5">
-        <div class="box" >
-            About Company:
+        <div class="box" style="height: 320px;">
+            <br>
+            <span
+                style="padding-left: 20px;font-size: 30px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                About Company</span>
+            <br>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div style="margin: 15px;">
+                <span
+                    style="font-size:20px ;text-align: justify;line-height: 1.6;">{{companyDataBySubject[0].aboutCompany}}</span>
+            </div>
         </div>
     </div>
     <div class="container mb-5">
         <div class="row">
-            <div class="col-3">
-                <div class="box">
-                    Company Offices
-                </div>
-               
-            </div>
-            <div class="col-3">
+            <div class="col-12">
+                <div class="box" style="height: auto;">
+                    <br>
+                    <span
+                        style="padding-left: 20px;font-size: 30px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">Additional
+                        Information
+                        Information</span>
+                    <br>
+                    <br>
+                    <mat-divider></mat-divider>
 
-                <div class="box">
-                    Hiring Domains:
+                    <div style="margin: 10px;margin-top:30px ;">
+                        <div class="mb-4">
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Company Offices :
+                                <span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{companyDataBySubject[0].companyOffices}}</span></span>
+                        </div>
+                        <div class="mb-4">
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Hiring Domains :<span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{companyDataBySubject[0].hiringDomains}}</span></span>
+                        </div>
+                        <div class="mb-4">
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Email ID: <span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{companyDataBySubject[0].emailID}}</span></span>
+                        </div>
+                        <div>
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Contact Number: <span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{companyDataBySubject[0].contactInfo}}</span></span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="col-3">
-
-                <div class="box">
-                    Email ID:
-                </div>
-            </div>
-            <div class="col-3">
-
-                <div class="box">
-                    Contact Number:
-                </div>
-            </div>
-
         </div>
     </div>
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-12">
 
-                <div class="box">
-                    Jobs posted by you:
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="d-flex flex-row">
         <div style="padding-left: 15px;padding-top:30px ;">
             <button style="width:120px ;background-color: black;color: white;" mat-raised-button

@@ -1,6 +1,8 @@
 <div class="container">
+
     <div class="container" style="padding: 20px;">
         <div class="row">
+
             <div class="col-6">
                 <div class="d-flex flex-row">
                     <div>
@@ -11,10 +13,11 @@
                     <div>
                         <div
                             style="padding-top: 50px;padding-left:30px;padding-bottom:10px ;font-size: 20px;font-weight: 500;">
-                            Name:
+                            Name: <span>{{userDataBySubject[0].firstName+' '+userDataBySubject[0].middleName+'
+                                '+userDataBySubject[0].lastName}}</span>
                         </div>
                         <div style="padding-left:30px;font-size: 20px;font-weight: 500;padding-bottom:10px ;">
-                            Year of Experience:
+                            Year of Experience: <span>{{userDataBySubject[0].id+3}}</span>
                         </div>
                     </div>
                 </div>
@@ -22,11 +25,11 @@
             <div class="col-6">
                 <div class="d-flex flex-row" style="padding:50px ;padding-left:150px">
                     <div style="padding-right:20px;padding-top:5px ;">
-                      
-                            <div>
-                                <a href="" style="text-decoration: none;">View applied jobs</a>
-                            </div>
-                       
+
+                        <div>
+                            <a href="" style="text-decoration: none;">View applied jobs</a>
+                        </div>
+
                     </div>
                     <div style="padding-right:30px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
@@ -58,49 +61,79 @@
         </div>
     </div>
     <div class="container mb-5 ">
-        <div class="box" >
-            Bio
+        <div class="box" style="height: 250px;">
+            <br>
+            <span
+                style="padding-left: 20px;font-size: 30px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">Description</span>
+            <br>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div style="margin: 10px;">
+                <span style="font-size:20px ;text-align: justify;line-height: 1.6;">{{userDataBySubject[0].bio}}</span>
+            </div>
         </div>
     </div>
     <div class="container mb-5">
-        <div class="box">
-            Education
+        <div class="box" style="height: 150px;">
+            <br>
+            <span
+                style="padding-left: 20px;font-size: 30px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">Education</span>
+            <br>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div style="margin-left:15px;">
+                <span style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                    <span
+                        style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{userDataBySubject[0].education}}</span></span>
+            </div>
+
         </div>
     </div>
     <div class="container mb-5">
         <div class="row">
-            <div class="col-6">
-
+            <div class="col-12">
                 <div class="box">
-                    Gender:
+                    <br>
+                    <span
+                        style="padding-left: 20px;font-size: 30px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">Personal
+                        Information</span>
+                    <br>
+                    <br>
+                    <mat-divider></mat-divider>
+
+                    <div style="margin: 10px;margin-top:30px ;">
+                        <div class="mb-4">
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">Gender:
+                                <span style="font-family: Georgia, 'Times New Roman', Times, serif ;">Male</span></span>
+                        </div>
+                        <div class="mb-4">
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Date of birth:<span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{userDataBySubject[0].dob}}</span></span>
+                        </div>
+                        <div class="mb-4">
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Email ID: <span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{userDataBySubject[0].email}}</span></span>
+                        </div>
+                        <div>
+                            <span
+                                style="font-size: 20px;font-weight: 500;font-family:Georgia, 'Times New Roman', Times, serif ;">
+                                Contact Number: <span
+                                    style="font-family: Georgia, 'Times New Roman', Times, serif ;">{{userDataBySubject[0].contactNumber}}</span></span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="col-6">
-
-                <div class="box">
-                    Date of birth:
-                </div>
-            </div>
-
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
 
-                <div class="box">
-                    Email ID:
-                </div>
-            </div>
-            <div class="col-6">
-
-                <div class="box">
-                    Contact Number:
-                </div>
-            </div>
-
-        </div>
-    </div>
     <div class="d-flex flex-row">
         <div style="padding-left: 15px;padding-top:30px ;">
             <button style="width:120px ;background-color: black;color: white;" mat-raised-button

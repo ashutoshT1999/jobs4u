@@ -5,7 +5,7 @@
     cursor: pointer;
     border: none;
     font-weight: bold;
-    color:#2980b9;
+    color: #2980b9;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
@@ -15,12 +15,12 @@
     color: #fff;
 }
 
-a {
+.a {
     background-image: linear-gradient(to right,
             white,
             white 50%,
             white 50%);
-     
+
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;
@@ -31,7 +31,7 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
-a:before {
+.a:before {
     content: '';
     background: white;
     display: block;
@@ -43,20 +43,12 @@ a:before {
     transition: all 0.3s ease-in-out;
 }
 
-a:hover {
+.a:hover {
     background-position: 0;
 }
 
-a:hover::before {
+.a:hover::before {
     width: 100%;
 }
 
-body {
-    background-color: inherit;
-    display: grid;
-    font-family: 'Poppins', sans-serif;
-    font-size: 27px;
-    font-weight: 700;
-    height: 100vh;
-    place-items: center;
-}
+
