@@ -1,0 +1,84 @@
+.body{
+    margin: 1rem 4rem;
+    padding: 2rem;
+    width: 80%;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.float{
+    padding: inherit;
+    position: absolute;
+}
+
+.info{
+    right:0;
+    top: 0;
+}
+
+.info>span{
+    display: inline-block;
+    width: max-content;
+    padding: 0.25rem 1rem;
+    background-color: rgb(246, 246, 246); 
+    border-radius: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.info>span:not(:last-child){
+    margin-right: 0.5rem;
+}
+
+.date{
+    bottom:0;
+    right: 0;
+}
+
+.date>span{
+    display: inline-block;
+    width: max-content;
+    padding: 0.25rem 1rem;
+    background-color: rgb(246, 246, 246); 
+    border-radius: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.call-to-action{
+    /* padding-top: 1rem; */
+    bottom:0;
+    left: 0;
+}
+
+.call-to-action>div{
+    padding: 0.25rem 1rem;
+    color: white;
+}
+
+.accepted{
+    display: inline-block;
+    /* color: rgb(104, 159, 104); */
+    border-radius: 0.25rem; 
+    background-color: rgb(104, 159, 104) ;
+}
+
+.rejected{
+    display: inline-block;
+    /* color: rgb(174, 81, 81); */
+    border-radius: 0.25rem; 
+    background-color: #c0392b ;
+}
+
+.stand-by{
+    display: inline-block;
+    border-radius: 0.25rem; 
+    background-color: #2980b9;
+}
+
+header h2,h3{
+    padding: 0;
+    margin: 0;
+}
+

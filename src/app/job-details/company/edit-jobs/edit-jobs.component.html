@@ -1,0 +1,126 @@
+<div class="container">
+    <header>
+        <h1 class="text-left">
+        Edit Job Details
+        </h1>
+        <h5>*Form fields are mandatory</h5>
+    </header>
+
+    <form class="row" [formGroup]="newJob">
+        <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Job Title</mat-label>
+            <input matInput type="text" formControlName="title">
+            <mat-error>
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4" >
+            <mat-label>Job Location</mat-label>
+            <input matInput type="text" formControlName="location">
+            <mat-error>
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4" >
+            <mat-label>Designation</mat-label>
+            <input matInput type="text" formControlName="designation">
+            <mat-error>
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4" >
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option value="Development">Development</mat-option>
+                <mat-option value="IT & Networking">IT & Networking</mat-option>
+                <mat-option value="Data Science">Data Science</mat-option>
+                <mat-option value="Marketing">Marketing</mat-option>
+                <mat-option value="Office Productivity">Office Productivity</mat-option>
+                <mat-option value="Business">Business</mat-option>
+                <mat-option value="Lifestyle">Lifestyle</mat-option>
+                <mat-option value="Cyber Security">Cyber Security</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4" >
+            <mat-label>Last Date</mat-label>
+            <input matInput type="date" formControlName="lastDate">
+            <mat-error>
+                * This field cannot be empty
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>CTC</mat-label>
+            <input matInput type="text" formControlName="ctc">
+            <mat-error>
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Experience</mat-label>
+            <mat-select>
+                <mat-option value="1">0-2 years</mat-option>
+                <mat-option value="2">2-5 years</mat-option>
+                <mat-option value="3">5-10 years</mat-option>
+                <mat-option value="4">10+ years</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Number of Openings</mat-label>
+            <input matInput type="number" formControlName="numberOfOpenings">
+            <mat-error *ngIf="newJob.get('numberOfOpenings')!.errors!==null && newJob.get('numberOfOpenings')!.errors!['required']">
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-4">
+            <mat-label>Skills</mat-label>
+            <mat-chip-list class="custom-chip-margin" #chipList aria-label="Video keywords" multiple formControlName="skills">
+                <mat-chip class="custom-chip"
+                    *ngFor="let keyword of keywords"
+                    [selected]="keyword"
+                    [value]="keyword"
+                    (removed)="removeKeyword(keyword)">
+                  {{keyword}}
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+            <input matInput type="text" placeholder="New keyword..."
+            [matChipInputFor]="chipList"
+            (matChipInputTokenEnd)="addKeywordFromInput($event)" formControlName="ctc">
+            </mat-chip-list>
+            <mat-error *ngIf="newJob.get('skills')!.errors!==null && newJob.get('skills')!.errors!['required']">
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-6">
+            <mat-label>Job Description</mat-label>
+            <textarea matInput rows="7" formControlName="description"></textarea>
+            <mat-error>
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-md-6">
+            <mat-label>Roles and Responsibility</mat-label>
+            <textarea matInput rows="7" formControlName="description"></textarea>
+            <mat-error>
+                * This field is required
+            </mat-error>
+        </mat-form-field>
+
+        <div class="col-md-12">
+            <button mat-raised-button (click)="submit()" class="col-md-auto primarybtn">Save</button>
+            <button mat-raised-button class="col-md-auto mx-4 secondarybtn">Go back</button>
+        </div>
+            
+    </form>
+</div>

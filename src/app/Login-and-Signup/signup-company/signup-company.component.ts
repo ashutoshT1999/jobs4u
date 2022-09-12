@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { CustomValidators } from '../Validators/validators';
 
 @Component({
@@ -10,7 +11,7 @@ import { CustomValidators } from '../Validators/validators';
 export class SignupCompanyComponent implements OnInit {
 
   SignupCompanyForm!:FormGroup;
-  constructor(private _fb:FormBuilder) { }
+  constructor(private _fb:FormBuilder,private _candidate:CandidatesService) { }
 
   ngOnInit(): void {
     this.SignupCompanyForm=this._fb.group({
@@ -22,6 +23,7 @@ export class SignupCompanyComponent implements OnInit {
 
         
     })
+    this._candidate.onLanding$.next(false);
 
   }
   submit(){
