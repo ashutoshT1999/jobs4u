@@ -1,10 +1,12 @@
-export interface ICompany{
-
+export interface ICompany {
     id: number;
-	password: string;
-	companyName: string;
-	companyType: string;
-	emailID: string;
-    jobsPosted:number[] ;
-  
+    password: string;
+    companyName: string;
+    companyType: string[];
+    companyOffices: string[];
+    hiringDomains: string[];
+    emailID: string;
+    contactInfo: string;
+    aboutCompany: string;
+    jobPosted: string[];
 }

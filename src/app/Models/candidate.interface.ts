@@ -1,7 +1,7 @@
 export interface ICandidate{
-    id:number;
-    password:string;
-    firstName:string;
+  id:number;
+  password:string;
+  firstName:string;
 	middleName:string;
 	lastName:string;
 	bio:string;

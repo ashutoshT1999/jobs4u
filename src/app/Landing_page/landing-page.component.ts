@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CandidatesService } from '../Services/candidates/candidates.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _data:CandidatesService) { }
 
   ngOnInit(): void {
+    this._data.onLanding$.next(true);
   }
 
 }

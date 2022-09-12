@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
+import { CompaniesService } from 'src/app/Services/companies/companies.service';
 import { CustomValidators } from '../Validators/validators';
 
 @Component({
@@ -9,21 +12,26 @@ import { CustomValidators } from '../Validators/validators';
 })
 export class LoginComponent implements OnInit {
 
-  LoginForm!:FormGroup;
-  constructor(private _fb:FormBuilder) { }
-
+  LoginForm!: FormGroup;
+  constructor(private _fb: FormBuilder, private _candidate: CandidatesService, private _company: CompaniesService) { }
+  userID: number = 0;
   ngOnInit(): void {
-    this.LoginForm=this._fb.group({
-       
-       email:['',[Validators.required,CustomValidators.emailCheckParam('gmail.com')]],
-        password:['', Validators.required],
-        
+    this.LoginForm = this._fb.group({
+
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+
     })
+    this._candidate.onLanding$.next(false);
 
   }
-  submit(){
-  
+  submitLoginForm(form: FormGroup) {
+    this._candidate.userID(form.value.email);
+    this._company.userID(form.value.email);
   }
+
+
+
 
 
 }
