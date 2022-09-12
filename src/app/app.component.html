@@ -1,2 +1,7 @@
-<app-navbar></app-navbar>
+<ng-container *ngIf="onLanding" >
+    <app-navbar></app-navbar>
+</ng-container>
+<ng-container *ngIf="!onLanding"  >
+    <app-navbar-other></app-navbar-other>
+</ng-container>
 <router-outlet></router-outlet>

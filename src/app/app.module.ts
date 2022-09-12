@@ -17,6 +17,7 @@ import { DataSourceService } from './Data/data.service';
 import { CompaniesService } from './Services/companies/companies.service';
 import { CandidatesService } from './Services/candidates/candidates.service';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+import { NavbarOtherModule } from './navbar-other/navbar-other.module';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     NavbarModule,
     JobDetailsModule,
     ProfileModule, PageNotFoundModule,
-    HttpClientModule,
+    HttpClientModule,NavbarOtherModule,
     HttpClientInMemoryWebApiModule.forRoot(DataSourceService)
   ],
   providers: [CompaniesService, CandidatesService, DataSourceService],
