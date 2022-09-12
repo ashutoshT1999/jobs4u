@@ -1,0 +1,112 @@
+<div class="d-flex align-items-center justify-content-center" style="padding-top: 50px;">
+    <form id="editcandidate" [formGroup]="editCompany">
+        <label for="productForm"
+            style="margin-bottom:20px;padding-left: 24px;font-weight: 700  ;font-size:30px;">Company Information</label>
+        <div class="d-flex flex-column">
+            <div class="d-flex flex-row">
+                <div class="p-4">
+                    <mat-form-field class="example-fill-width" appearance="outline" style="width: 235px;" >
+                        <mat-label>Company name</mat-label>
+                        <input matInput value="companyName" name="companyName" formControlName="companyName">
+                        <mat-error>
+                            <span>Company name is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field appearance="outline" style="width: 235px;">
+                        <mat-label>Select Company Type</mat-label>
+                        <mat-select multiple formControlName="companyType">
+                            <mat-option value="Development">Development</mat-option>
+                            <mat-option value="IT & Networking">IT & Networking</mat-option>
+                            <mat-option value="Data Science">Data Science</mat-option>
+                            <mat-option value="Cybersecurity">Cybersecurity</mat-option>
+                            <mat-option value="Marketing">Marketing</mat-option>
+                            <mat-option value="Office Productivity">Office Productivity</mat-option>
+                            <mat-option value="Business">Business</mat-option>
+                            <mat-option value="Lifestyle">Lifestyle</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            <span>Company Type is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="p-4">
+                    <mat-form-field appearance="outline" style="width: 235px;">
+                        <mat-label>Company Office(s)</mat-label>
+                        <mat-select multiple formControlName="companyOffices">
+                          <mat-option *ngFor="let state of CompanyOffices" >{{state}}</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            <span>Company office(s) location is<strong> required</strong></span>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field appearance="outline" style="width: 235px;">
+                        <mat-label>Hiring Domain(s)</mat-label>
+                        <mat-select multiple formControlName="hiringDomains">
+                            <mat-option value="Development">Development</mat-option>
+                            <mat-option value="IT & Networking">IT & Networking</mat-option>
+                            <mat-option value="Data Science">Data Science</mat-option>
+                            <mat-option value="Cybersecurity">Cybersecurity</mat-option>
+                            <mat-option value="Marketing">Marketing</mat-option>
+                            <mat-option value="Office Productivity">Office Productivity</mat-option>
+                            <mat-option value="Business">Business</mat-option>
+                            <mat-option value="Lifestyle">Lifestyle</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            <span>Hiring domain(s) location is<strong> required</strong></span>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+
+                <div class="p-4">
+                    <mat-form-field appearance="outline" style="width: 235px;">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" required formControlName="emailID">
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field class="example-full-width" appearance="outline" style="width: 235px;">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput value="contactInfo" name="contactInfo" formControlName="contactInfo">
+                        <mat-error>
+                            <span>Contact Number is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="outline"
+                        style="width: 97%;padding-left: 21px;">
+                        <mat-label>About Company</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="aboutCompany"></textarea>
+                        <mat-error>
+                            <span>About Company<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div style="padding-left: 24px;padding-top:30px ;">
+                    <button style="width:120px;background-color: black;color: white;" mat-raised-button
+                        type="submit">Save</button>
+                </div>
+                <div style="padding-left: 24px;padding-top:30px;">
+                    <button style="width:150px;background-color: white;color: black;" mat-raised-button type="submit">Go to Dashboard</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>

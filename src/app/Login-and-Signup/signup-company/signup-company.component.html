@@ -1,0 +1,50 @@
+<div class="container screen-height item-left">
+    <div class="row">
+      <div class="col-sm item-center">
+          <div class="form-container margin-top box-shadow mat-elevation-z15">
+            <form [formGroup]="SignupCompanyForm" (ngSubmit)="submit()">
+                <div class="row">
+                <div class="center">
+                    <h1><b>Join Us</b></h1>
+                </div>
+                </div>  
+                <div class="row margin-top">
+                  <mat-form-field class="example-form-field" appearance="outline">
+                    <mat-label>Email</mat-label>
+                        <input matInput type="text" formControlName="email" >
+                            <mat-error *ngIf="SignupCompanyForm.get('email')!.errors!['required']">Email Required</mat-error>
+                            <mat-error *ngIf= " !SignupCompanyForm.get('email')!.errors!['required'] && SignupCompanyForm.get('email')!.errors!==null &&  SignupCompanyForm.get('email')!.errors!['emailmismatch']">Enter a valid email id</mat-error>
+                  </mat-form-field>
+                </div>
+    
+               <div class="row">      
+                 <mat-form-field class="example-form-field" appearance="outline">
+                   <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password" >
+                            <mat-error *ngIf="SignupCompanyForm.get('password')!.errors!['required']">Password is required</mat-error>
+                            <mat-error *ngIf="SignupCompanyForm.get('password')!.errors!==null && !SignupCompanyForm.get('password')!.errors!['required'] && SignupCompanyForm.get('password')!.errors!['maxLength'] && SignupCompanyForm.get('password')!.errors!['minLength']">Password should be of 8 characters</mat-error>
+                 </mat-form-field>
+                </div>
+                <div class="row">      
+                    <mat-form-field class="example-form-field" appearance="outline">
+                      <mat-label>Re-enter password</mat-label>
+                           <input matInput type="password" formControlName="password2" >
+                               <mat-error *ngIf="SignupCompanyForm.get('password2')!.errors!==null && SignupCompanyForm.get('password2')!.errors!['required']">Password is required</mat-error>
+                    </mat-form-field>
+                   </div>
+
+                <div class="center margin-top ">
+                    <button mat-raised-button class="primarybtn" type="submit" style="background-color: black;color:white ;">Sign Up</button>
+                </div>
+                <div class="row margin-top text-center">
+                    <label style="font-size: 15px;">Already a user? <a href="">Login</a></label>
+                </div>
+            </form> 
+        </div>    
+    </div>
+    <div class="col-sm " style="margin-top: 55px;padding-top: 70px;">
+        <img src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7863.jpg?w=740&t=st=1662487239~exp=1662487839~hmac=be2738ca0250b7d1980f2008cca8559b6400f34bcfad686c3bbc42d2a5b747d5" style="width: 500px; ">
+    </div>
+    </div>
+    
+</div>

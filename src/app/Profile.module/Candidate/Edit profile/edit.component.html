@@ -1,0 +1,124 @@
+<div class="d-flex align-items-center justify-content-center" style="padding-top: 50px;" >
+    <form id="editcandidate" [formGroup]="editCandidate">
+        <label for="productForm"
+            style="margin-bottom:20px;padding-left: 24px;font-weight: 700  ;font-size:30px;">Profile Information</label>
+        <div class="d-flex flex-column">
+            <div class="d-flex flex-row">
+                <div class="p-4">
+                    <mat-form-field class="example-fill-width" appearance="outline" style="width:235px ;">
+                        <mat-label>Firstname</mat-label>
+                        <input matInput value="firstName" name="firstName" formControlName="firstName" >
+                        <mat-error>
+                            <span>Firstname is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Middlename</mat-label>
+                        <input matInput value="middleName" name="middleName" formControlName="middleName">
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Lastname</mat-label>
+                        <input matInput value="lastName" name="lastName" formControlName="lastName">
+                        <mat-error>
+                            <span>Lastname is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="p-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dob">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker">
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error>
+                            <span>Date of Birth<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Location</mat-label>
+                        <input matInput value="location" name="location" formControlName="location">
+                        <mat-error>
+                            <span>Location is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Select Education Qualification</mat-label>
+                        <mat-select formControlName="education">
+                            <mat-option value="1">High School</mat-option>
+                            <mat-option value="2">Intermeditate</mat-option>
+                            <mat-option value="3">Polytechnic</mat-option>
+                            <mat-option value="4">Bachelor degree</mat-option>
+                            <mat-option value="4">Master degree</mat-option>
+                            <mat-option value="4">PhD</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            <span>Education Qualification is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+
+                <div class="p-4">
+                    <mat-form-field appearance="outline" style="width: 235px;">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" [formControl]="email" required form>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="p-4">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput value="contactNumber" name="contactNumber" formControlName="contactNumber">
+                        <mat-error>
+                            <span>Contact Number is<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex flex-column" class="p-4">
+                    <div class="mb-2">
+                        <mat-label>Resume</mat-label>
+                    </div>
+                    <div><input type="file" name="resume" formControlName="resume"></div>
+
+                </div>
+
+
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="outline" style="width: 93%;padding-left: 21px;">
+                        <mat-label>Description/Bio</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="bio"></textarea>
+                        <mat-error>
+                            <span>Description/Bio<strong> required</strong></span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div style="padding-left: 24px;padding-top:30px ;">
+                    <button style="width:120px;background-color: black;color: white;" mat-raised-button type="submit">Save</button>
+                </div>
+                <div style="padding-left: 24px;padding-top:30px;">
+                    <button style="width:150px;background-color: white;color: black;" mat-raised-button type="submit">Go to Dashboard</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>
