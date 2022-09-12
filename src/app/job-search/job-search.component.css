@@ -1,0 +1,13 @@
+.form-input-container,
+.mat-input {
+  width:100%;
+}
+
+.form-input-container{
+  margin: auto 0.5rem
+}
+
+[hidden]{
+  display:none !important;
+}
+
