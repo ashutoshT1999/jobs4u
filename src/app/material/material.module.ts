@@ -15,20 +15,24 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,NgbModule,
-    MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule,MatIconModule,
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule
+    MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule, MatIconModule,
+    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule, MatAutocompleteModule,
+    MatCardModule
   ],
   exports: [
-    MatFormFieldModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule,ReactiveFormsModule,MatIconModule,
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule
+    MatFormFieldModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule,ReactiveFormsModule, MatIconModule,
+    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule, MatAutocompleteModule,
+    MatCardModule
   ]
 })
 export class MaterialsModule { }

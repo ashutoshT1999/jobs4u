@@ -8,16 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginAndSignupModule } from './Login-and-Signup/login-and-signup.module';
 import { LandingPageModule } from './Landing_page/landing-page.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { JobSearchModule } from './job-search/job-search.module';
 import { JobDetailsModule } from './job-details/job-details.module';
 import { ProfileModule } from './Profile.module/profile.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataSourceService } from './Data/data.service';
 import { CompaniesService } from './Services/companies/companies.service';
 import { CandidatesService } from './Services/candidates/candidates.service';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
-
 
 @NgModule({
   declarations: [
@@ -31,10 +31,11 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     LoginAndSignupModule,
     LandingPageModule,
     NavbarModule,
-    JobDetailsModule
+    JobDetailsModule,
+    JobSearchModule,
     ProfileModule, PageNotFoundModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataSourceService)
+    InMemoryWebApiModule.forRoot(DataSourceService)
   ],
   providers: [CompaniesService, CandidatesService, DataSourceService],
   bootstrap: [AppComponent]
