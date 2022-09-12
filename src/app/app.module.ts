@@ -13,7 +13,7 @@ import { JobDetailsModule } from './job-details/job-details.module';
 import { ProfileModule } from './Profile.module/profile.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataSourceService } from './Data/data.service';
 import { CompaniesService } from './Services/companies/companies.service';
 import { CandidatesService } from './Services/candidates/candidates.service';
@@ -35,13 +35,11 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
     JobDetailsModule,
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
-<<<<<<< HEAD
     HttpClientModule,NavbarOtherModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataSourceService)
-=======
+    HttpClientInMemoryWebApiModule.forRoot(DataSourceService),
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataSourceService)
->>>>>>> 3f63e6522a1e10a4c1bd530b10b9f788b264eb0e
+//     InMemoryWebApiModule.forRoot(DataSourceService)
+// >>>>>>> 3f63e6522a1e10a4c1bd530b10b9f788b264eb0e
   ],
   providers: [CompaniesService, CandidatesService, DataSourceService],
   bootstrap: [AppComponent]
