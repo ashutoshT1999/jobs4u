@@ -2,3 +2,28 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.primarybtn{
+    margin: 10px 0 0 0 ;
+    padding: 0 16px;
+    min-width: max-content;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: black;
+    color:white;
+}
+
+.secondarybtn{
+    margin-top: 20px;
+    padding: 0 16px;
+    min-width: max-content;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    color:black;
+}

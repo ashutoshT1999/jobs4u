@@ -9,6 +9,7 @@ import { LoginAndSignupModule } from './Login-and-Signup/login-and-signup.module
 import { LandingPageModule } from './Landing_page/landing-page.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { JobSearchModule } from './job-search/job-search.module';
+import { JobDetailsModule } from './job-details/job-details.module';
 import { ProfileModule } from './Profile.module/profile.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +21,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule, ReactiveFormsModule,
@@ -30,6 +31,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     LoginAndSignupModule,
     LandingPageModule,
     NavbarModule,
+    JobDetailsModule,
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
     HttpClientModule,

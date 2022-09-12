@@ -1,0 +1,63 @@
+.float-info{
+    padding: inherit;
+    position: absolute;
+    right:0;
+    top: 0.25rem;
+}
+
+.float-info>span:not(:last-child){
+    margin-right: 0.5rem;
+}
+
+.float-info>span{
+    display: inline-block;
+    width: max-content;
+    /* margin-right: 0.5rem; */
+    padding: 0.25rem 1rem;
+    background-color: rgb(246, 246, 246); 
+    border-radius: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.float-details{
+    padding:inherit;
+    position:absolute;
+    right: 0;
+}
+
+.float-details>span{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.link{
+    color: #c0392b;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.link:hover{
+    border: #c0392b 1px solid;
+    transition: all 0.2s ease-in-out;
+}
+
+.close:hover{
+    background-color: #c0392b;
+    color: aliceblue;
+    transition: all 0.2s ease-in-out;
+}
+
+.call-to-action{
+    position: relative;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    position: relative;
+}
+
+
