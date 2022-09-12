@@ -9,17 +9,23 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatFormFieldModule, MatInputModule, MatDialogModule,
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule,MatToolbarModule
+    MatTableModule, MatButtonModule, MatSelectModule,
+    MatProgressSpinnerModule, MatToolbarModule, MatAutocompleteModule,
+    MatCardModule
   ],
   exports: [
     MatFormFieldModule, MatInputModule, MatDialogModule, 
-    MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule,MatToolbarModule
+    MatTableModule, MatButtonModule, MatSelectModule,
+    MatProgressSpinnerModule, MatToolbarModule, MatAutocompleteModule,
+    MatCardModule
   ]
 })
 export class MaterialsModule { }
