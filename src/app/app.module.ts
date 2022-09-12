@@ -8,6 +8,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginAndSignupModule } from './Login-and-Signup/login-and-signup.module';
 import { LandingPageModule } from './Landing_page/landing-page.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { ProfileModule } from './Profile.module/profile.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataSourceService } from './Data/data.service';
+import { CompaniesService } from './Services/companies/companies.service';
+import { CandidatesService } from './Services/candidates/candidates.service';
+import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 
 @NgModule({
@@ -15,15 +23,18 @@ import { NavbarModule } from './navbar/navbar.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
     LoginAndSignupModule,
     LandingPageModule,
-    NavbarModule
+    NavbarModule,
+    ProfileModule, PageNotFoundModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataSourceService)
   ],
-  providers: [],
+  providers: [CompaniesService, CandidatesService, DataSourceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CandidatesService } from '../Services/candidates/candidates.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  onLanding:any=true;
+  constructor(private _data:CandidatesService) { }
 
   ngOnInit(): void {
+    this._data.onLanding$.subscribe(data=>{
+      this.onLanding = data;
+    })
   }
 
 }
