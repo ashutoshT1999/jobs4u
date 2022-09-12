@@ -10,5 +10,5 @@ export interface IJob{
   ctc:number;
   lastDateToApply:string;
   experienceRequired:number;
-  totalApplicationCoutn:number;
+  totalApplicationCount:number;
 }

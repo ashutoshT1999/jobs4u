@@ -1,1 +1,54 @@
-<p>job-search works!</p>
+
+<section class="search-header form-container container my-5">
+  <form (ngSubmit)="search()" class="form mat-elevation-z3 col-11 col-md-10  mx-auto p-3 d-flex flex-column flex-md-row justify-content-evenly border align-items-center">
+    <div class="form-input-container">
+      <mat-form-field class="mat-input" appearance="outline">
+        <mat-label>Job title</mat-label>
+        <input type="text"
+               placeholder="Enter Job Title"
+               aria-label="job-title"
+               matInput
+               [formControl]="jobControl"
+               [matAutocomplete]="jobTitle">
+        <mat-autocomplete #jobTitle="matAutocomplete">
+          <mat-option *ngFor="let option of filteredJobOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+
+    <div class="form-input-container">
+      <mat-form-field class="mat-input" appearance="outline">
+        <mat-label>location</mat-label>
+        <input type="text"
+               placeholder="Enter Location"
+               aria-label="location"
+               matInput
+               [formControl]="locationControl"
+               [matAutocomplete]="location">
+        <mat-autocomplete #location="matAutocomplete">
+          <mat-option value="all" >All Location</mat-option>
+          <mat-option *ngFor="let option of filteredLocationOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="form-submit-btn pb-3">
+      <div class="btn-container">
+        <button mat-raised-button color="primary" type="submit">Find Jobs</button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- <section class="search-body d-flex" *ngIf="show"> -->
+<section class="search-body d-md-flex" [hidden]="hideResults">
+  <section class="left-section">
+    <app-job-list #jobList (resultFoundEvent)="showResult($event)" ></app-job-list>
+  </section>
+  <section class="right-section">
+    <app-job-display ></app-job-display>
+  </section>
+</section>
