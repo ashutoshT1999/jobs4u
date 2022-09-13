@@ -19,7 +19,9 @@ export class JobListComponent implements OnInit {
       post_date: "",
       job_type: "",
       salary_offered: "",
-      valid_through: "",
+      valid_through: "",  
+      job_description: '',
+      required_skills: '',
       html_job_description:``
     }
   ];
