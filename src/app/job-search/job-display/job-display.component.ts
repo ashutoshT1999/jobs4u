@@ -8,7 +8,7 @@ import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 })
 export class JobDisplayComponent implements OnInit {
   job:any={ 
-    id: 1,
+    id: 0,
     job_title: "",
     category: "",
     company_name: "",
@@ -18,6 +18,8 @@ export class JobDisplayComponent implements OnInit {
     job_type: "",
     salary_offered: "",
     valid_through: "",
+    job_description: '',
+    required_skills: '',
     html_job_description:``
   }
 

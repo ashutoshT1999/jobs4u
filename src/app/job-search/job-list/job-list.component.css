@@ -1,9 +1,14 @@
-.hell{
-  height: 4em;
-  overflow: hidden;
+.list-item{
+  margin: 1em;
+  list-style: none;
+  cursor: pointer;
 }
 
 .card{
-  width:450px;
+  max-width: 450px;
+} 
 
+.hell{
+  height: 7em;
+  overflow: hidden;
 }
