@@ -1,30 +1,20 @@
 <div class="list-container">
   <ul class="list" *ngIf="true">
     <ng-container *ngFor="let job of jobList">
-      <li class="list-item">
+      <li class="list-item" (click)="showDetails(job)">
         <mat-card class="card">
           <mat-card-title style="line-height:1em;">{{ job.job_title }} </mat-card-title>
           <mat-card-subtitle>{{ job.company_name }} </mat-card-subtitle>
           <mat-card-content>
-            <p class="hell" [innerHtml]="job.html_job_description"></p>
-            <p>{{ job.salary_offered }} </p>
+            <p class="hell" [innerHtml]="job.required_skills"></p>
+            <p>{{ job.salary_offered }} </p> 
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="showDetails(job)">View</button>
-            <button mat-button>Apply </button>
+            <button mat-raised-button (click)="showDetails(job)">View</button>
+            <button mat-raised-button color="primary">Apply </button>
           </mat-card-actions>
         </mat-card>
       </li>
     </ng-container>
   </ul>
 </div>
-
-<script>
-
-</script>
-<!-- <div *ngIf="jobList.length>1">
-
-  <ng-container *ngFor="let job of jobList">
-    <div>{{job.job_title}} </div>
-  </ng-container>
-</div> -->

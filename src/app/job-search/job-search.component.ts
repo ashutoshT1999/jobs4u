@@ -15,7 +15,7 @@ export class JobSearchComponent implements OnInit {
   locationControl = new FormControl('');
 
   jobOptions: string[] = ['software Developer', 'Sales Executive', 'Networking', 'Software Tester', 'Teacher', 'Marketing Executive','Engineering Design', 'Accounts', 'Journalism', 'Hotels', 'Medical', "Sales", "Production","Financial Services","IT Software - Application Programming", "ITES", "Executive Assistant"];
-  locationOptions: string[] = ['Noida', 'Delhi', 'Nagpur', 'Mumbai', 'Pune', 'Bangalore', 'Kolkata', 'Hyderabad', 'Chennai', 'Jaipur', 'Indore', 'Gurgao', 'Ahemdabad'];
+  locationOptions: string[] = ['Noida', 'Delhi', 'Nagpur', 'Mumbai', 'Pune', 'Bengaluru', 'Kolkata', 'Hyderabad', 'Chennai', 'Jaipur', 'Indore', 'Gurgao', 'Ahemdabad'];
   
   filteredJobOptions!: Observable<string[]>;
   filteredLocationOptions!: Observable<string[]>;

@@ -9,13 +9,20 @@ import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 export class JobListComponent implements OnInit {
 
   jobList = [
-    {
-      job_title:'',
-      company_name:'',
-      html_job_description:'',
-      salary_offered:'',
-      category:'',
-      inferred_city:''
+    { 
+      id: 0,
+      job_title: "",
+      category: "",
+      company_name: "",
+      city: "",
+      country: "",
+      post_date: "",
+      job_type: "",
+      salary_offered: "",
+      valid_through: "",  
+      job_description: '',
+      required_skills: '',
+      html_job_description:``
     }
   ];
   @Output()
@@ -34,11 +41,13 @@ export class JobListComponent implements OnInit {
   }
 
   filterJob(title:string,location:string){
-    console.log(title, location)
-
     this._jobService.getJobList().subscribe(dataList=> {
       this.jobList=dataList.filter((obj:any)=>(title === obj.category || title === 'all') && (location === obj.inferred_city || location === 'all'));
-      if(this.jobList.length) this.resultFoundEvent.emit(true);
+      if(this.jobList.length) {
+        this.resultFoundEvent.emit(true);
+      this._jobService.displayJob$.next(this.jobList[0]);
+
+      }
       else this.resultFoundEvent.emit(false);
     });
   }
