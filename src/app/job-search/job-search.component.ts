@@ -21,7 +21,6 @@ export class JobSearchComponent implements OnInit {
   filteredLocationOptions!: Observable<string[]>;
 
   hideResults:boolean = true;
-  // show:boolean = false;
   
   @ViewChild('jobList')
   private jobListReference!: JobListComponent;
@@ -74,7 +73,6 @@ export class JobSearchComponent implements OnInit {
     let title = this.jobControl.value?this.jobControl.value:'all'
     let location = this.locationControl.value?this.locationControl.value:'all'
     this.jobListReference.filterJob(title,location)
-
   }
 
   showResult(value:boolean){

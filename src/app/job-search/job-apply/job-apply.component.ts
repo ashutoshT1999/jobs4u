@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-apply',
@@ -7,8 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./job-apply.component.css']
 })
 export class JobApplyComponent implements OnInit {
-  jobApplicationForm!:FormGroup
-  constructor(private _formBuilder:FormBuilder) { }
+
+  jobApplicationForm!:FormGroup;
+
+  constructor(private _formBuilder:FormBuilder, private _router:Router) { }
 
   ngOnInit(): void {
     this.jobApplicationForm = this._formBuilder.group({
@@ -16,15 +19,16 @@ export class JobApplyComponent implements OnInit {
       middleName:[''],
       lastName:['', [Validators.required]],
       email:['', [Validators.required]],
-      contactNumber:[ , [Validators.required]],
+      contactNumber:[ , [Validators.required, Validators.min(1000000000), Validators.max(9999999999) ]],
       qualification:['', [Validators.required]],
       resume:['', [Validators.required]],
     })
-    console.log(this.jobApplicationForm)
-    console.log(this.jobApplicationForm.get('resume'))
   }
   apply(){
-    console.log(this.jobApplicationForm)
-    console.log(this.jobApplicationForm.get('resume'))
+    if(this.jobApplicationForm.status === 'INVALID') return;
+  }
+
+  back(){
+    this._router.navigate(['/search']);
   }
 }
