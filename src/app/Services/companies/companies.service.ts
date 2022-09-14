@@ -11,7 +11,7 @@ export class CompaniesService implements CanDeactivate<EditCompanyComponent>, On
     companiesDataURL: string = "api/companiesData";
     onCompanies$ = new BehaviorSubject(false);
     Loggedin$ = new BehaviorSubject(false);
-    userData:any[]=[];
+    userName$ = new BehaviorSubject("");
     constructor(private _http: HttpClient) {
 
     }
@@ -23,7 +23,6 @@ export class CompaniesService implements CanDeactivate<EditCompanyComponent>, On
         return this._http.get<ICompany[]>(this.companiesDataURL);
     }
     userID(user: string) {
-        console.log(user);
         this.companyIDsubject$.next(user);
 
     }

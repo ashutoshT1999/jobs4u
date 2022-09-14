@@ -8,15 +8,20 @@ import { CompaniesService } from '../Services/companies/companies.service';
   styleUrls: ['./navbar-other.component.css']
 })
 export class NavbarOtherComponent implements OnInit {
-  userData: any[] = [];
-  userName:string="";
+
+  userName: string | null = "";
   constructor(private _data: CandidatesService, private _data2: CompaniesService) { }
   loggedin: any = false;
   ngOnInit(): void {
     this._data2.Loggedin$.subscribe(x => {
       this.loggedin = x;
     })
-   this.userData = this._data2.userData
+
+    this._data2.userName$.subscribe(x => {
+      this.userName = x;
+
+    })
+
   }
 
   onCompanies() {
@@ -25,6 +30,11 @@ export class NavbarOtherComponent implements OnInit {
 
   }
   onLanding() {
-    this._data.onLanding$.next(false);
+    this._data.onLanding$.next(true);
+
+  }
+  loggedOut() {
+
+    this._data2.Loggedin$.next(false);
   }
 }

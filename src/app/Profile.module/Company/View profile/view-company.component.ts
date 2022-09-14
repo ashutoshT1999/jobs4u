@@ -27,7 +27,6 @@ export class ViewCompanyComponent implements OnInit {
     this._company.companyIDsubject$.subscribe((data) => {
       this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
         this.companyDataBySubject = companyData.filter(x => x.emailID == data);
-        console.log(this.companyDataBySubject);
       })
     })
 
