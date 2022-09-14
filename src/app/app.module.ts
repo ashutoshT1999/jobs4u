@@ -19,6 +19,7 @@ import { CompaniesService } from './Services/companies/companies.service';
 import { CandidatesService } from './Services/candidates/candidates.service';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { NavbarOtherModule } from './navbar-other/navbar-other.module';
+import { JobsServices } from './Services/Jobs/jobs.service';
 
 @NgModule({
   declarations: [
@@ -32,15 +33,16 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
     LoginAndSignupModule,
     LandingPageModule,
     NavbarModule,
-    NavbarOtherModule,
     JobDetailsModule,
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
+    HttpClientModule,NavbarOtherModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataSourceService),
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataSourceService),
 
   ],
-  providers: [CompaniesService, CandidatesService, DataSourceService],
+  providers: [CompaniesService, CandidatesService, DataSourceService, JobsServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
