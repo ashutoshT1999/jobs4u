@@ -8,14 +8,14 @@ import { JobSearchComponent } from './job-search.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobDisplayComponent } from './job-display/job-display.component';
 import { JobsServices } from '../Services/Jobs/jobs.service';
-// import { JobApplyComponent } from './job-apply/job-apply.component';
+import { JobApplyComponent } from './job-apply/job-apply.component';
 
 @NgModule({
   declarations: [
     JobSearchComponent,
     JobListComponent,
-    JobDisplayComponent
-    // JobApplyComponent
+    JobDisplayComponent,
+    JobApplyComponent
   ],
   imports: [
     CommonModule, MaterialsModule, ReactiveFormsModule, FormsModule, 

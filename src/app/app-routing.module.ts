@@ -16,22 +16,24 @@ import { EditComponent } from './Profile.module/Candidate/Edit profile/edit.comp
 import { ViewComponent } from './Profile.module/Candidate/View profile/view.component';
 import { EditCompanyComponent } from './Profile.module/Company/Edit profile/edit-company.component';
 import { ViewCompanyComponent } from './Profile.module/Company/View profile/view-company.component';
+import { CandidatesService } from './Services/candidates/candidates.service';
+import { CompaniesService } from './Services/companies/companies.service';
 
 const routes: Routes = [
   { path: 'home', component: LandingPageComponent },
   { path: 'search', component: JobSearchComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'mainSignup', component: MainSignupPageComponent},
+  { path: 'mainSignup', component: MainSignupPageComponent },
   { path: 'candidateSignup', component: SignUpJobSeekersComponent },
   { path: 'companySignup', component: SignupCompanyComponent },
-  { path: 'candidateView',component: ViewComponent },
-  { path: 'companyView',component: ViewCompanyComponent },
-  { path: 'candidateEdit',component: EditComponent },
-  { path: 'companyEdit',component: EditCompanyComponent },
-  { path: 'postedJobs', component: PostedJobsComponent},
-  { path: 'postedJobs/edit', component:EditJobsComponent},
-  { path: 'appliedJobs', component:AppliedJobsComponent},
-  { path: 'newJob', component: AddNewJobComponent},
+  { path: 'candidateView', component: ViewComponent },
+  { path: 'companyView', component: ViewCompanyComponent },
+  { path: 'candidateEdit', component: EditComponent },
+  { path: 'companyEdit', component: EditCompanyComponent },
+  { path: 'postedJobs', component: PostedJobsComponent },
+  { path: 'postedJobs/edit', component: EditJobsComponent },
+  { path: 'appliedJobs', component: AppliedJobsComponent },
+  { path: 'newJob', component: AddNewJobComponent },
   { path: 'job/apply/:id', component: JobApplyComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

@@ -7,7 +7,7 @@
             </div>
             <div class="d-flex flex-row mt-4" style="padding-left:40px ;">
                 <div style="margin-right: 2rem;">
-                    <a  href="#" style="text-decoration: none;"><span style="color: white;">Home</span></a>
+                    <a href="#" style="text-decoration: none;"><span style="color: white;">Home</span></a>
                 </div>
                 <div>
                     <a routerLink="/search" routerLinkActive="active" style="text-decoration: none;color: white;">Job
@@ -16,25 +16,31 @@
             </div>
         </div>
         <div class="d-flex justify-content-end ml-auto">
-           
+
             <div class="d-flex flex-row mt-2" style="margin-left: 2rem;padding-top: 0.2rem;margin-right: 5rem">
-                <div style="margin-right: 2rem;">
+                <div [hidden]="loggedin" style="margin-right: 2rem;">
 
                     <button class="btn btn-outline" routerLink="/login"
-                        style="background-color: white;color:black;width: 7rem;" (click)="onCompanies()" type="submit">Log in</button>
+                        style="background-color: white;color:black;width: 7rem;" (click)="onCompanies()"
+                        type="submit">Log in</button>
                 </div>
-                <div>
+                <div [hidden]="loggedin">
                     <button class="btn btn-outline" routerLink="" type="submit"
                         style="background-color: black;color:white ;width: 7rem;" routerLink="/mainSignup">Sign
                         Up</button>
                 </div>
-                <div [hidden]="true" style="margin-left: 22rem;">
+                <div [hidden]="!loggedin" style="margin-left: 15rem;">
                     <div class="d-flex flex-row">
                         <div class="me-2 bd-highlight d-flex justify-content-end">
                             <div class="flex-row bd-highlight">
-                                <span style="font-size: larger;"><img
-                                        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                                        style="width: 50px ;height:50px;border-radius:50%;">
+                                <span style="font-size: larger;">
+                                    <svg style="width: 50px ;height:50px;border-radius:50%;fill: white;"
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
@@ -43,10 +49,20 @@
                                 <button style="border: none;background-color:#1976d2;" class="dropdown-toggle"
                                     type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <ul class="dropdown-menu" style="left: -8em;top: 3em;">
+                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item disabled" href="#"
+                                            style="font-weight:bold;color:black ;">Logged in as:</a></li>
+                                    <li class="dropdown-item disabled" style="margin-bottom: 0.1rem;">
+                                        <p style="color:black ;"></p>
+                                    </li>
+                                    <mat-divider style="margin-bottom: 0.4rem;"></mat-divider>
+                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" href="#">My Profile</a>
+                                    </li>
+                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" href="#">About us</a>
+                                    </li>
+                                    <mat-divider style="margin-bottom: 0.4rem;"></mat-divider>
+                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" href="#">Log out</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
