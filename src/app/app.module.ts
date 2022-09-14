@@ -13,7 +13,7 @@ import { JobDetailsModule } from './job-details/job-details.module';
 import { ProfileModule } from './Profile.module/profile.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataSourceService } from './Data/data.service';
 import { CompaniesService } from './Services/companies/companies.service';
 import { CandidatesService } from './Services/candidates/candidates.service';
@@ -22,7 +22,7 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule,
@@ -37,7 +37,8 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataSourceService)
+    HttpClientInMemoryWebApiModule.forRoot(DataSourceService),
+
   ],
   providers: [CompaniesService, CandidatesService, DataSourceService],
   bootstrap: [AppComponent]
