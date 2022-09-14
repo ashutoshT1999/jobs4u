@@ -19,13 +19,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'candidateSignup', component: SignUpJobSeekersComponent },
   { path: 'companySignup', component: SignupCompanyComponent },
-  { path:  'candidateView',component: ViewComponent },
-  { path:  'companyView',component: ViewCompanyComponent },
-  {path: 'postedJobs', component: PostedJobsComponent},
-  {path: 'postedJobs/edit', component:EditJobsComponent},
-  {path: 'appliedJobs', component:AppliedJobsComponent},
-  {path: 'newJob', component: AddNewJobComponent},
-  { path: '', redirectTo: 'postedJobs', pathMatch: 'full' },
+  { path: 'candidateView', component: ViewComponent },
+  { path: 'companyView', component: ViewCompanyComponent },
+  { path: 'postedJobs', component: PostedJobsComponent },
+  { path: 'postedJobs/edit', component: EditJobsComponent },
+  { path: 'appliedJobs', component: AppliedJobsComponent },
+  { path: 'newJob', component: AddNewJobComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
