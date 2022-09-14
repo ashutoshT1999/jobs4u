@@ -1,14 +1,19 @@
 .view-job-container{
-  height: 90vh;
+  height: 95vh;
   position: sticky !important;
   top: 1em;
 }
 
 .view-job-body{
-  height: calc(90vh - 300px);
-  overflow-y: auto;
+  height: calc(90vh - 200px);
+  overflow-y: scroll;
   padding-bottom: 2em;
   text-align: justify;
+  max-width: 600px;
+  min-width: 300px;
+}
+.view-job-body > div {
+  padding: 1rem;
 }
 
 button {

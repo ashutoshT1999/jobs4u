@@ -1,0 +1,74 @@
+<section class="mt-5">
+  <div>
+    <h1 class="text-center col-11 col-lg-8 mx-auto px-5 fs-1">Job Application</h1>
+  </div>
+  <form [formGroup]="jobApplicationForm" (ngSubmit)="apply()" class="form mat-elevation-z3 col-11 col-lg-8 mt-5 mx-auto p-5 pb-4 border">
+    <div class="row ">
+      <div class="form-input-container col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Enter First Name" formControlName="firstName">             
+          <mat-error>First Name is required</mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Middle Name</mat-label>
+          <input matInput placeholder="Enter Middle Name" formControlName="middleName">             
+          <mat-error></mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Enter Last Name" formControlName="lastName">             
+          <mat-error>Last Name is required</mat-error>               
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="form-input-container col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Enter your email" formControlName="email">             
+          <mat-error>Email is required</mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter your Contact Number" formControlName="contactNumber">             
+          <mat-error *ngIf="jobApplicationForm.get('contactNumber')!.errors !== null && jobApplicationForm.get('contactNumber')!.errors!['required']">Contact Number is required</mat-error>               
+          <mat-error *ngIf="jobApplicationForm.get('contactNumber')!.errors !== null && !jobApplicationForm.get('contactNumber')!.errors!['required'] && (jobApplicationForm.get('contactNumber')!.errors!['min'] || jobApplicationForm.get('contactNumber')!.errors!['max'])">Contact Number is of 10 digits</mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Qualification</mat-label>
+          <mat-select matInput formControlName="qualification">
+            <mat-option value="postgraduate">Postgraduate</mat-option>
+            <mat-option value="Graduate">Graduate</mat-option>
+            <mat-option value="undergraduate">Undergraduate</mat-option>
+            <mat-option value="12th">12th</mat-option>
+            <mat-option value="10th">10th</mat-option>
+          </mat-select>     
+          <mat-error>Select your highest Qualification</mat-error>               
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">      
+      <div class="col file-input-container">
+        <label>Upload your Resume <span class="text-danger">*</span></label>
+        <input type="file" accept=".pdf,.doc,.docx" formControlName="resume">             
+      </div>  
+      <span class="upload-resume-error" *ngIf="jobApplicationForm.touched && jobApplicationForm.get('resume')!.errors !== null && jobApplicationForm.get('resume')!.errors!['required'] ">Resume is required</span>
+    </div>    
+
+    <div class="row mt-4 ">
+      <button mat-raised-button type="submit" class="ms-3 primarybtn" >Apply</button>
+      <button mat-raised-button type="button" class="ms-3 secondarybtn" (click)="back()">Back</button>
+    </div>
+  </form>
+</section>

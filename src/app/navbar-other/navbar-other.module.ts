@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarOtherComponent } from './navbar-other.component';
 import { RouterModule } from '@angular/router';
+import { MaterialsModule } from '../material/material.module';
 
 
 
@@ -10,7 +11,7 @@ import { RouterModule } from '@angular/router';
     NavbarOtherComponent
   ],
   imports: [
-    CommonModule,RouterModule
+    CommonModule,RouterModule,MaterialsModule
   ],
   exports:[
     NavbarOtherComponent

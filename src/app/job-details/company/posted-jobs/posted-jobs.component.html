@@ -13,10 +13,10 @@
                     <div>
                         <div
                             style="padding-top: 50px;padding-left:30px;padding-bottom:10px ;font-size: 1rem;font-weight: bold;">
-                            <U>Company Name</U> : <span style="font-size: 1rem;">{{userDataBySubject.companyName}}</span>
+                            Company Name : <span style="font-size: 1rem;">{{userDataBySubject.companyName}}</span>
                         </div>
                         <div style="padding-left:30px;font-size: 1rem;font-weight: bold;padding-bottom:10px ;">
-                            <U>Company Domain(s)</U> : <span>{{userDataBySubject.companyType}}</span>
+                            Company Domain(s) : <span>{{userDataBySubject.companyType}}</span>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div style="padding-right:0.75rem;padding-top:5px ;">
 
                         <div>
-                            <a href="" style="text-decoration: none;">View Profile Details</a>
+                            <a href="" style="text-decoration: none;" routerLink="/companyView">View Profile Details</a>
                         </div>
 
                     </div>
@@ -56,8 +56,8 @@
                             style="background-color:white ;border-radius: 15px;">Resume</button>
                     </div>
                 </div>
-                <div>
-                    <button mat-raised-button class="primarybtn">Add New Job</button>
+                <div class="d-flex flex-column justify-content-end align-items-end h-100">
+                    <button mat-raised-button class="primarybtn" routerLink="/newJob">Add New Job</button>
                 </div>
             </div>
         </div>

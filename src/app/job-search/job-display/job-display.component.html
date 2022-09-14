@@ -5,16 +5,16 @@
     <p class="company-name">{{ job.company_name }} </p>
     <p class="location">{{ job.city + ', ' + job.country }}</p>
     <p class="salary">{{ job.salary_offered }} </p>
-    <button mat-raised-button color="primary" class="my-2">Apply Now</button>
+    <button mat-raised-button class="my-2 primarybtn" [routerLink]="['/job/apply/',job.id]">Apply Now</button>
   </div>
   <div class="view-job-body p-2">
-    <h3 class="fs-4">Job Description</h3>
+    <h3 class="fs-5">Job Description</h3>
     <div [innerHtml]="job.job_description"></div>
-    <h3 class="fs-4">Required Skills</h3>
+    <h3 class="fs-5">Required Skills</h3>
     <div [innerHtml]="job.required_skills"></div>
   </div>
-  <div class="view-job-footer border-top">
+  <!-- <div class="view-job-footer border-top">
   <button mat-raised-button color="primary" class="my-2 mx-auto">Apply Now</button>
-  </div>
+  </div> -->
 
 </div>

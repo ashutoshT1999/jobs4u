@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICandidate } from 'src/app/Models/candidate.interface';
+import { IJob } from 'src/app/Models/job.interface';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 
@@ -25,6 +26,8 @@ export class AppliedJobsComponent implements OnInit {
     appliedJobs: []
   };
 
+  jobData: IJob[] = [] ;
+
   constructor(private _candidate: CandidatesService, private _jobs:JobsServices) { }
 
   ngOnInit(): void {
@@ -35,6 +38,11 @@ export class AppliedJobsComponent implements OnInit {
       })
     })
 
+    this._jobs.getJobList().subscribe((list) => {
+      this.jobData = list.filter(x=> this.userDataBySubject.appliedJobs.includes(x.id));
+      console.log(this.jobData);
+      
+    })
 
   }
 

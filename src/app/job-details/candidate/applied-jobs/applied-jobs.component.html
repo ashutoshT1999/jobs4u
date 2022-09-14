@@ -17,7 +17,7 @@
                                 '+userDataBySubject.lastName}}</span>
                         </div>
                         <div style="padding-left:30px;font-size: 20px;font-weight: 500;padding-bottom:10px ;">
-                            Year of Experience: <span>{{userDataBySubject.id+3}}</span>
+                            Year of Experience: <span>{{userDataBySubject.id+3}} years</span>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <div style="padding-right:0.5rem;padding-top:5px ;">
 
                         <div>
-                            <a href="" style="text-decoration: none;">View applied jobs</a>
+                            <a href="" style="text-decoration: none;" routerLink="/candidateView">View Profile Details</a>
                         </div>
 
                     </div>
@@ -61,18 +61,22 @@
         </div>
     </div>
     <mat-divider style="width: 100%;"></mat-divider>
+<ng-container *ngFor="let job of jobData">
 <div class="body">
     <header>
-        <h2>Web Developer</h2>
+        <h2>{{job.job_title}}</h2>
 
-        <h5>GlobalLogic, India</h5>
+        <h5>{{job.company_name}}, {{job.city}}, {{job.country}}</h5>
     </header>
     
     <div class="float info">
-        <span>Software Developer</span>
-        <span>2-5 years</span>
-        <span>₹ 5,50,000</span>
-        <span>Last Date: 10.09.2022</span>
+        <span style="    background-color: coral;
+        color: aliceblue;">{{job.category}}</span>
+        <span *ngIf="job.experienceRequired != null">{{job.experienceRequired}}</span>
+        <span style="background-color: #00b894;
+        color: aliceblue;">{{job.salary_offered}}</span>
+        <span style="background-color: cornflowerblue;
+        color: aliceblue;">Last Date: {{job.valid_through | date: "dd.MM.y"}}</span>
     </div>
     <p class="description" (click)="details()">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos officiis quaerat itaque a cupiditate alias dolores, et accusamus, repellat non, doloremque architecto corrupti odit. Quia tenetur alias eveniet quisquam nam?
@@ -85,4 +89,5 @@
         <span class="link" (click)="details()">More Details...</span>
     </div>
 </div>
+</ng-container>
 

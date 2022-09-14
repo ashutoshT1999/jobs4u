@@ -8,6 +8,7 @@ import { materialize } from 'rxjs';
 import { MaterialsModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostedJobDialog } from './company/posted-jobs/complete-description/completeDescription.dialog';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -22,7 +23,8 @@ import { PostedJobDialog } from './company/posted-jobs/complete-description/comp
   imports: [
     CommonModule,
     MaterialsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports:[
     AddNewJobComponent,

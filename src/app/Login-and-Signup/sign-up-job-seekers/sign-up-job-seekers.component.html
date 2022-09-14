@@ -5,7 +5,7 @@
             <form [formGroup]="SignupJobSeekersForm" (ngSubmit)="submit()">
                 <div class="row">
                 <div class="center">
-                    <h1><b>Join us Candidate</b></h1>
+                    <h1><b>Join us</b></h1>
                 </div>
                 </div>  
                 <div class="row margin-top">
@@ -32,7 +32,7 @@
                    </div>
 
                 <div class="center margin-top ">
-                    <button mat-raised-button class="primarybtn" type="submit" style="background-color: black;color:white ;">Sign Up</button>
+                    <button mat-raised-button class="primarybtn" type="submit" style="background-color: black;color:white ;" routerLink="/candidateEdit">Sign Up</button>
                 </div>
                 <div class="margin-top text-center">
                     <label style="font-size: 15px;">Already a user? <a routerLink="/login">Login</a></label>
