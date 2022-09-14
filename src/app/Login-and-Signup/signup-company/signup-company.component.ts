@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
-import { CustomValidators } from '../Validators/validators';
 
 @Component({
   selector: 'app-signup-company',
@@ -17,8 +16,8 @@ export class SignupCompanyComponent implements OnInit {
     this.SignupCompanyForm=this._fb.group({
        
       
-        email:['',[Validators.required,CustomValidators.emailCheckParam('gmail.com')]],
-        password:['', Validators.required, Validators.maxLength(8), Validators.minLength(8)],
+        email:['',[Validators.required,Validators.email]],
+        password:['', Validators.required],
         password2:['', Validators.required],
 
         

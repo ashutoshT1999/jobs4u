@@ -12,25 +12,26 @@
                   <mat-form-field class="example-form-field" appearance="outline">
                     <mat-label>Email</mat-label>
                         <input matInput type="text" formControlName="email" >
-                            <mat-error *ngIf="SignupJobSeekersForm.get('email')!.errors!['required']">Email Required</mat-error>
-                            <mat-error *ngIf= " !SignupJobSeekersForm.get('email')!.errors!['required'] && SignupJobSeekersForm.get('email')!.errors!==null &&  SignupJobSeekersForm.get('email')!.errors!['emailmismatch']">Enter a valid email id</mat-error>
+                            <mat-error>Email Required</mat-error>
+
                   </mat-form-field>
                 </div>
     
                <div class="row">      
                  <mat-form-field class="example-form-field" appearance="outline">
                    <mat-label>Password</mat-label>
-                        <input matInput type="password" formControlName="password" >
-                            <mat-error *ngIf="SignupJobSeekersForm.get('password')!.errors!['required']">Password is required</mat-error>
-                            <mat-error *ngIf="SignupJobSeekersForm.get('password')!.errors!==null && !SignupJobSeekersForm.get('password')!.errors!['required'] && SignupJobSeekersForm.get('password')!.errors!['minLength']">Password should be of minimum 8 characters</mat-error>
+                        <input matInput type="text" formControlName="password" >
+                            <mat-error>Password is required</mat-error>
 
                  </mat-form-field>
                 </div>
                 <div class="row">      
                     <mat-form-field class="example-form-field" appearance="outline">
                       <mat-label>Re-enter password</mat-label>
-                           <input matInput type="password" formControlName="password2" >
-                               <mat-error *ngIf="SignupJobSeekersForm.get('password2')!.errors!==null && SignupJobSeekersForm.get('password2')!.errors!['required']">Password is required</mat-error>
+                           <input matInput type="text" formControlName="password2" >
+                               <mat-error>Password is required</mat-error>
+                               <!-- <mat-error *ngIf="errorPassword">Password is not same</mat-error> -->
+                                <!-- <span *ngIf="errorPassword">pass is not same</span> -->
                     </mat-form-field>
                    </div>
 

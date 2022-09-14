@@ -22,7 +22,7 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule,

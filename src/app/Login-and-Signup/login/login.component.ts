@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { CompaniesService } from 'src/app/Services/companies/companies.service';
-import { CustomValidators } from '../Validators/validators';
 
 @Component({
   selector: 'app-login',
