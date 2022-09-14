@@ -1,3 +1,10 @@
+.main-body{
+    display: grid;
+    place-items: center;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+}
+
 .body{
     margin: 1rem 4rem;
     padding: 2rem;
@@ -27,6 +34,11 @@
     padding: 0.25rem 1rem;
     background-color: rgb(246, 246, 246); 
     border-radius: 1rem;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+}
+
+.float-info>span:hover{
+    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -69,5 +81,9 @@ header>h2,h3{
     background-color: #c0392b;
     color: aliceblue;
     transition: all 0.2s ease-in-out;
+}
+
+svg{
+    width: 1rem;
 }
 

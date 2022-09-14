@@ -8,5 +8,5 @@ export interface ICompany {
     emailID: string;
     contactInfo: string;
     aboutCompany: string;
-    jobPosted: string[];
+    jobPosted: number[];
 }
