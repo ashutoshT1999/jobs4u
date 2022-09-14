@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-company',
@@ -8,7 +9,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class EditCompanyComponent implements OnInit {
 
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder, private _route: Router) {
   }
 
   ngOnInit(): void {
@@ -32,7 +33,10 @@ export class EditCompanyComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
- 
+  routeView(){
+    this._route.navigate(["/companyView"]);
+  }
+
   CompanyOffices: string[] = ["Andhra Pradesh",
     "Arunachal Pradesh",
     "Assam",
