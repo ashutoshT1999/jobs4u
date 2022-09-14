@@ -7,7 +7,7 @@ import { EditComponent } from "src/app/Profile.module/Candidate/Edit profile/edi
 
 @Injectable()
 export class CandidatesService implements CanDeactivate<EditComponent>, OnInit {
-    candidateIDsubject$ = new Subject;
+    candidateIDsubject$ = new BehaviorSubject("");
     onLanding$ = new BehaviorSubject(true);
     onLanding: string | null = "true";
     onCandidate$ = new BehaviorSubject(false);

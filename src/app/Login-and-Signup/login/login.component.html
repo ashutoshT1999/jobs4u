@@ -34,7 +34,7 @@
 
                     <div class="center margin-top ">
                         <button mat-raised-button class="primarybtn" type="submit"
-                            style="background-color: black;color:white ;">Login</button>
+                            style="background-color: black;color:white ;" (click)="submitLoginForm(LoginForm)">Login</button>
                     </div>
                     <div class="row margin-top text-center" [hidden]="onCandidate">
                         <label style="font-size: 15px;">New to our website? <a routerLink="/candidateSignup">Sign

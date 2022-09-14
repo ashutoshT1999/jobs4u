@@ -9,10 +9,6 @@
                 <div style="margin-right: 2rem;">
                     <a  href="#" style="text-decoration: none;"><span style="color: white;">Home</span></a>
                 </div>
-                <div style="margin-right: 2rem;">
-                    <a routerLink="/login"  routerLinkActive="active" style="text-decoration: none;" (click)="onCandidate()"><span style="color: white;">For
-                            Companies</span></a>
-                </div>
                 <div>
                     <a routerLink="/search" routerLinkActive="active" style="text-decoration: none;color: white;">Job
                         Search</a>
@@ -29,7 +25,7 @@
                 </div>
                 <div>
                     <button class="btn btn-outline" routerLink="" type="submit"
-                        style="background-color: black;color:white ;width: 7rem;">Sign
+                        style="background-color: black;color:white ;width: 7rem;" routerLink="/mainSignup">Sign
                         Up</button>
                 </div>
                 <div [hidden]="true" style="margin-left: 22rem;">

@@ -7,7 +7,7 @@ import { EditCompanyComponent } from "src/app/Profile.module/Company/Edit profil
 
 @Injectable()
 export class CompaniesService implements CanDeactivate<EditCompanyComponent>,OnInit {
-    companyIDsubject$ = new Subject();
+    companyIDsubject$ = new BehaviorSubject("");
     companiesDataURL: string = "api/companiesData";
     onCompanies$= new BehaviorSubject(false);
     constructor(private _http: HttpClient) {
@@ -21,7 +21,9 @@ export class CompaniesService implements CanDeactivate<EditCompanyComponent>,OnI
         return this._http.get<ICompany[]>(this.companiesDataURL);
     }
     userID(user: string) {
+        console.log(user);
         this.companyIDsubject$.next(user);
+        
     }
     canDeactivate(component: EditCompanyComponent): Observable<boolean> | Promise<boolean> | boolean {
 

@@ -5,6 +5,7 @@ import { ViewComponent } from './Candidate/View profile/view.component';
 import { MaterialsModule } from '../material/material.module';
 import { EditCompanyComponent } from './Company/Edit profile/edit-company.component';
 import { ViewCompanyComponent } from './Company/View profile/view-company.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +17,7 @@ import { ViewCompanyComponent } from './Company/View profile/view-company.compon
     ViewCompanyComponent
   ],
   imports: [
-    CommonModule, MaterialsModule
+    CommonModule, MaterialsModule, RouterModule
   ],
   exports: [
     EditComponent,

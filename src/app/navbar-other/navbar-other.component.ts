@@ -14,11 +14,6 @@ export class NavbarOtherComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCandidate(){
-    this._data2.onCompanies$.next(false);
-    this._data.onCandidate$.next(true);
-
-  }
   onCompanies(){
     this._data2.onCompanies$.next(true);
     this._data.onCandidate$.next(false);

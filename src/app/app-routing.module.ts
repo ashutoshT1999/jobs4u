@@ -11,7 +11,9 @@ import { LoginComponent } from './Login-and-Signup/login/login.component';
 import { SignUpJobSeekersComponent } from './Login-and-Signup/sign-up-job-seekers/sign-up-job-seekers.component';
 import { SignupCompanyComponent } from './Login-and-Signup/signup-company/signup-company.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EditComponent } from './Profile.module/Candidate/Edit profile/edit.component';
 import { ViewComponent } from './Profile.module/Candidate/View profile/view.component';
+import { EditCompanyComponent } from './Profile.module/Company/Edit profile/edit-company.component';
 import { ViewCompanyComponent } from './Profile.module/Company/View profile/view-company.component';
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'companySignup', component: SignupCompanyComponent },
   { path: 'candidateView',component: ViewComponent },
   { path: 'companyView',component: ViewCompanyComponent },
+  { path: 'candidateEdit',component: EditComponent },
+  { path: 'companyEdit',component: EditCompanyComponent },
   { path: 'postedJobs', component: PostedJobsComponent},
   { path: 'postedJobs/edit', component:EditJobsComponent},
   { path: 'appliedJobs', component:AppliedJobsComponent},
