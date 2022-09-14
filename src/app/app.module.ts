@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginAndSignupModule } from './Login-and-Signup/login-and-signup.module';
 import { LandingPageModule } from './Landing_page/landing-page.module';
-import { NavbarModule } from './navbar/navbar.module';
+
 import { JobSearchModule } from './job-search/job-search.module';
 import { JobDetailsModule } from './job-details/job-details.module';
 import { ProfileModule } from './Profile.module/profile.module';
@@ -32,7 +32,6 @@ import { JobsServices } from './Services/Jobs/jobs.service';
     NgbModule,
     LoginAndSignupModule,
     LandingPageModule,
-    NavbarModule,
     JobDetailsModule,
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
