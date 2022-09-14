@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppliedJobsComponent } from './job-details/candidate/applied-jobs/applied-jobs.component';
+import { AddNewJobComponent } from './job-details/company/add-new-job/add-new-job.component';
 import { EditJobsComponent } from './job-details/company/edit-jobs/edit-jobs.component';
 import { PostedJobsComponent } from './job-details/company/posted-jobs/posted-jobs.component';
 import { JobSearchComponent } from './job-search/job-search.component';
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'candidateSignup', component: SignUpJobSeekersComponent },
   {path: 'postedJobs', component: PostedJobsComponent},
   {path: 'postedJobs/edit', component:EditJobsComponent},
+  {path: 'appliedJobs', component:AppliedJobsComponent},
+  {path: 'newJob', component: AddNewJobComponent},
   { path: '', redirectTo: 'postedJobs', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
