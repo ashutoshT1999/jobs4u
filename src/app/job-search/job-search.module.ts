@@ -7,12 +7,14 @@ import { JobDisplayComponent } from './job-display/job-display.component';
 import { MaterialsModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JobsServices } from '../Services/Jobs/jobs.service';
+import { JobApplyComponent } from './job-apply/job-apply.component';
 
 @NgModule({
   declarations: [
     JobSearchComponent,
     JobListComponent,
-    JobDisplayComponent
+    JobDisplayComponent,
+    JobApplyComponent
   ],
   imports: [
     CommonModule, MaterialsModule, ReactiveFormsModule, FormsModule

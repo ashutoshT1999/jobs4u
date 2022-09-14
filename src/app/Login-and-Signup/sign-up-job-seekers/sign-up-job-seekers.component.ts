@@ -9,7 +9,9 @@ import { CandidatesService } from 'src/app/Services/candidates/candidates.servic
 })
 export class SignUpJobSeekersComponent implements OnInit,OnDestroy {
   SignupJobSeekersForm!:FormGroup;
- 
+  pass1:string='';
+  pass2:string='';
+  errorPassword:boolean=false;
   constructor(private _fb:FormBuilder,private _candidate:CandidatesService) {}   
   ngOnInit(): void {
     this.SignupJobSeekersForm=this._fb.group({
@@ -18,7 +20,6 @@ export class SignUpJobSeekersComponent implements OnInit,OnDestroy {
         password:['', Validators.required],
         password2:['', Validators.required]
 
-        
     })
     this._candidate.onLanding$.next(false);
   }

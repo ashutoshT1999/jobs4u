@@ -22,7 +22,7 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule,
@@ -32,11 +32,13 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
     LoginAndSignupModule,
     LandingPageModule,
     NavbarModule,
+    NavbarOtherModule,
     JobDetailsModule,
     JobSearchModule,
     ProfileModule, PageNotFoundModule,
-    HttpClientModule, NavbarOtherModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataSourceService),
+
   ],
   providers: [CompaniesService, CandidatesService, DataSourceService],
   bootstrap: [AppComponent]
