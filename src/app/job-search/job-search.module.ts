@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialsModule } from '../material/material.module';
 import { JobSearchComponent } from './job-search.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobDisplayComponent } from './job-display/job-display.component';
-import { MaterialsModule } from '../material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JobsServices } from '../Services/Jobs/jobs.service';
 import { JobApplyComponent } from './job-apply/job-apply.component';
+import { JobsServices } from '../Services/Jobs/jobs.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { JobApplyComponent } from './job-apply/job-apply.component';
     JobApplyComponent
   ],
   imports: [
-    CommonModule, MaterialsModule, ReactiveFormsModule, FormsModule
+    CommonModule, MaterialsModule, ReactiveFormsModule, FormsModule, 
+    RouterModule
   ],
   exports:[JobSearchComponent],
   providers:[JobsServices]

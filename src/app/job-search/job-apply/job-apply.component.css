@@ -1,0 +1,37 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.mat-input {
+  width: 100% !important;
+}
+.row{
+  width: 100%;
+
+}
+
+.file-input-container{
+  position: relative;
+  padding: 1rem;
+  margin: 1em;
+  border: 2px solid rgb(230, 224, 234);
+  border-radius: 0.4rem;
+}
+.file-input-container>label{
+  position: absolute;
+  top: -0.7em;
+  background-color: white;
+  color: indigo;
+}
+.file-input-container>input{
+  font-size: 1rem;
+  width: 100%;
+}
