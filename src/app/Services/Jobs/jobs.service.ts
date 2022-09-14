@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
 import { Observable, Subject } from "rxjs";
+import { IJob } from "src/app/Models/job.interface";
 
 @Injectable()
 export class JobsServices implements OnInit{
@@ -32,8 +33,8 @@ export class JobsServices implements OnInit{
     return this.job;
   }
 
-  getJobList():Observable<any>{
-    return this._http.get<any>(this.jobURL)
+  getJobList():Observable<IJob[]>{
+    return this._http.get<IJob[]>(this.jobURL)
   }
 
 }
