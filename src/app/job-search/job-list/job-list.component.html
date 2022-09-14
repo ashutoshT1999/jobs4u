@@ -2,7 +2,7 @@
   <ul class="list" *ngIf="true">
     <ng-container *ngFor="let job of jobList">
       <li class="list-item" (click)="showDetails(job)">
-        <mat-card class="card  mx-auto">
+        <mat-card class="card mx-auto p-4">
           <mat-card-title style="line-height:1em;">{{ job.job_title }} </mat-card-title>
           <mat-card-subtitle>{{ job.company_name }} </mat-card-subtitle>
           <mat-card-content>
