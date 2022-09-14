@@ -3,7 +3,7 @@
         <h1 class="text-left">
         Post New Job
         </h1>
-        <h5>*Form fields are mandatory</h5>
+        <h5 style="color: red;"> *Form fields are mandatory</h5>
     </header>
     
 
@@ -97,9 +97,12 @@
             [matChipInputFor]="chipList"
             (matChipInputTokenEnd)="addKeywordFromInput($event)" formControlName="ctc">
             </mat-chip-list>
-            <mat-error *ngIf="newJob.get('skills')!.errors!==null && newJob.get('skills')!.errors!['required']">
-                * This field is required
-            </mat-error>
+            <!-- <ng-container *ngIf="!this.newJob.dirty">
+               <mat-error *ngIf="newJob.get('skills')!.errors!==null && newJob.get('skills')!.errors!['required']">
+                    * This field is required
+                </mat-error> 
+            </ng-container> -->
+            
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="col-md-6">
@@ -121,7 +124,7 @@
         
 
         <div class="col-md-12">
-            <button mat-raised-button class="col-md-auto primarybtn">Post</button>
+            <button mat-raised-button class="col-md-auto primarybtn" (click)="submit()">Post</button>
             <button mat-raised-button class="col-md-auto mx-4 secondarybtn">Cancel</button>
         </div>
             

@@ -23,7 +23,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MaterialsModule,
-    ReactiveFormsModule,RouterModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports:[
     AddNewJobComponent,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IJob } from 'src/app/Models/job.interface';
 import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
   styleUrls: ['./job-display.component.css']
 })
 export class JobDisplayComponent implements OnInit {
-  job:any={ 
+  job:IJob={ 
     id: 0,
     job_title: "",
     category: "",
