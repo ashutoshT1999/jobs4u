@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { CustomValidators } from '../Validators/validators';
@@ -8,17 +8,17 @@ import { CustomValidators } from '../Validators/validators';
   templateUrl: './signup-company.component.html',
   styleUrls: ['./signup-company.component.css']
 })
-export class SignupCompanyComponent implements OnInit {
+export class SignupCompanyComponent implements OnInit,OnDestroy {
 
   SignupCompanyForm!:FormGroup;
   constructor(private _fb:FormBuilder,private _candidate:CandidatesService) { }
-
+  
   ngOnInit(): void {
     this.SignupCompanyForm=this._fb.group({
        
       
-        email:['',[Validators.required,CustomValidators.emailCheckParam('gmail.com')]],
-        password:['', Validators.required, Validators.maxLength(8), Validators.minLength(8)],
+        email:['',[Validators.required,Validators.email]],
+        password:['', Validators.required],
         password2:['', Validators.required],
 
         
@@ -26,7 +26,10 @@ export class SignupCompanyComponent implements OnInit {
     this._candidate.onLanding$.next(false);
 
   }
-  submit(){
+  ngOnDestroy(): void {
+  }
+
+  submit(){ 
   }
 
 }

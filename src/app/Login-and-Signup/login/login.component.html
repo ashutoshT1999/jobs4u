@@ -1,50 +1,57 @@
-<div class="container screen-height item-left">
-    <div class="row">
-        <div class="col-sm item-center ">
-            <div class="form-container mat-elevation-z15 box-shadow">
-                <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm(LoginForm)">
-                    <div class="row">
-                        <div class="center">
-                            <h1><b>Welcome Back</b></h1>
+<div class="d-flex align-items-center justify-content-center">
+    <div class="container screen-height item-left">
+        <div class="row">
+            <div class="col-sm item-center ">
+                <div class="form-container mat-elevation-z15 box-shadow">
+                    <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm(LoginForm)">
+                        <div class="row">
+                            <div class="center">
+                                <h1><b>Welcome Back</b></h1>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm item-center margin-top-top">
-                        <img src="https://pixelprime.co/themes/jobster-wp/demo-5/wp-content/themes/jobster/images/signin-fig.png"
-                            style="width:100px">
-                    </div>
-                    <div class="row margin-top">
-                        <mat-form-field class="example-form-field" appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input matInput type="text" formControlName="email">
-                            <mat-error>
-                                Email Required
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
+                        <div class="col-sm item-center margin-top-top">
+                            <img src="https://pixelprime.co/themes/jobster-wp/demo-5/wp-content/themes/jobster/images/signin-fig.png"
+                                style="width:100px">
+                        </div>
+                        <div class="row margin-top">
+                            <mat-form-field class="example-form-field" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="text" formControlName="email">
+                                <mat-error>
+                                    Email Required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
 
-                    <div class="row">
-                        <mat-form-field class="example-form-field" appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input matInput type="password" formControlName="password">
-                            <mat-error
-                                *ngIf="LoginForm.get('password')!.errors!==null && LoginForm.get('password')!.errors!['required']">
-                                Password is required</mat-error>
-                        </mat-form-field>
-                    </div>
+                        <div class="row">
+                            <mat-form-field class="example-form-field" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input matInput type="password" formControlName="password">
+                                <mat-error
+                                    *ngIf="LoginForm.get('password')!.errors!==null && LoginForm.get('password')!.errors!['required']">
+                                    Password is required</mat-error>
+                            </mat-form-field>
+                        </div>
 
-                    <div class="center margin-top ">
-                        <button mat-raised-button class="primarybtn" type="submit"
-                            style="background-color: black;color:white ;">Login</button>
-                    </div>
-                    <div class="row margin-top text-center">
-                        <label style="font-size: 15px;">New to our website? <a href="">Sign Up</a></label>
-                    </div>
-                </form>
+                        <div class="center margin-top ">
+                            <button mat-raised-button class="primarybtn" type="submit"
+                                style="background-color: black;color:white ;">Login</button>
+                        </div>
+                        <div class="row margin-top text-center" [hidden]="onCandidate">
+                            <label style="font-size: 15px;">New to our website? <a routerLink="/candidateSignup">Sign
+                                    Up</a></label>
+                        </div>
+                        <div class="row margin-top text-center" [hidden]="onCompany">
+                            <label style="font-size: 15px;">New to our website? <a routerLink="/companySignup">Sign
+                                    Up</a></label>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="col-sm item-center" style="margin-top: 45px;">
-            <img src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37336.jpg?w=740&t=st=1662487666~exp=1662488266~hmac=bbcee29e6ffd4e8fee1db4b76815f880703e90438e52d41837950d9ce602487f"
-                style="width: 450px; aspect-ratio: 1; ">
+            <div class="col-sm item-center" style="margin-top: 45px;">
+                <img src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37336.jpg?w=740&t=st=1662487666~exp=1662488266~hmac=bbcee29e6ffd4e8fee1db4b76815f880703e90438e52d41837950d9ce602487f"
+                    style="width: 450px; aspect-ratio: 1; ">
+            </div>
         </div>
     </div>
 </div>
