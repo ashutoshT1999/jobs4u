@@ -1,51 +1,59 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #1976d2;">
-    <div class="d-flex flex-row" style="margin-right: 39rem;">
-        <div class="m-2" style="padding-left: 2rem;">
-            <a class="navbar-brand" href="#"><img src="./assets/static/logo.png" width="160px" height="50px" alt=""></a>
-        </div>
-    </div>
-    <div class="d-flex flex-row" style="padding-top: 0.2rem;">
-        <div style="margin-right: 2rem;">
-            <a href="" style="text-decoration: none;"><span style="color: white;">For Job seekers</span></a>
-        </div>
-        <div style="margin-right: 2rem;">
-            <a href="" style="text-decoration: none;"><span style="color: white;">For Companies</span></a>
-        </div>
-        <div>
-            <a href="" style="text-decoration: none;"><span style="color: white;">Job Search</span></a>
-        </div>
-    </div>
-    <div class="d-flex flex-row" style="margin-left: 5rem;padding-top: 0.2rem;">
-        <div style="margin-right: 2rem;">
-
-            <button class="btn btn-outline" routerLink="/login" style="background-color: white;color:black;width: 7rem;"
-                type="submit">Log in</button>
-        </div>
-        <div>
-            <button class="btn btn-outline" routerLink="/candidateSignup" type="submit"
-                style="background-color: black;color:white ;width: 7rem;">Sign
-                Up</button>
-        </div>
-        <div [hidden]="true" style="margin-left: 22rem;">
-            <div class="d-flex flex-row">
-                <div class="me-2 bd-highlight d-flex justify-content-end">
-                    <div class="flex-row bd-highlight">
-                        <span style="font-size: larger;"><img
-                                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                                style="width: 50px ;height:50px;border-radius:50%;">
-                        </span>
-                    </div>
+<nav class="navbar navbar-expand-lg " style="background-color: #1976d2;">
+    <div class="d-flex flex-row w-100">
+        <div class="d-flex flex-row col-md-6" style="margin-right:auto;">
+            <div class="m-2" style="padding-left: 2rem;">
+                <a class="navbar-brand" href="#"><img src="./assets/static/logo.png" width="160px" height="50px"
+                        alt=""></a>
+            </div>
+            <div class="d-flex flex-row mt-4" style="padding-left:40px ;">
+                <div style="margin-right: 2rem;">
+                    <a  href="#" style="text-decoration: none;"><span style="color: white;">Home</span></a>
                 </div>
-                <div class="flex-row bd-highlight">
-                    <div class="dropdown" style="padding-top:0.9rem ;">
-                        <button style="border: none;background-color:#1976d2;" class="dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                <div style="margin-right: 2rem;">
+                    <a routerLink="/login"  routerLinkActive="active" style="text-decoration: none;" (click)="onCandidate()"><span style="color: white;">For
+                            Companies</span></a>
+                </div>
+                <div>
+                    <a routerLink="/search" routerLinkActive="active" style="text-decoration: none;color: white;">Job
+                        Search</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end ml-auto">
+           
+            <div class="d-flex flex-row mt-2" style="margin-left: 2rem;padding-top: 0.2rem;margin-right: 5rem">
+                <div style="margin-right: 2rem;">
+
+                    <button class="btn btn-outline" routerLink="/login"
+                        style="background-color: white;color:black;width: 7rem;" (click)="onCompanies()" type="submit">Log in</button>
+                </div>
+                <div>
+                    <button class="btn btn-outline" routerLink="" type="submit"
+                        style="background-color: black;color:white ;width: 7rem;">Sign
+                        Up</button>
+                </div>
+                <div [hidden]="true" style="margin-left: 22rem;">
+                    <div class="d-flex flex-row">
+                        <div class="me-2 bd-highlight d-flex justify-content-end">
+                            <div class="flex-row bd-highlight">
+                                <span style="font-size: larger;"><img
+                                        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                                        style="width: 50px ;height:50px;border-radius:50%;">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex-row bd-highlight">
+                            <div class="dropdown" style="padding-top:0.9rem ;">
+                                <button style="border: none;background-color:#1976d2;" class="dropdown-toggle"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

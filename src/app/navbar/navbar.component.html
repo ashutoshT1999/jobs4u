@@ -7,10 +7,10 @@
             <div class="d-flex">
                 <div class="d-flex" style=" margin-top: 10px;">
                     <div style="margin: 10px;margin-right: 30px;font-weight:500;font-size:17px ;">
-                        <a class="nav-link a" routerLink="/postedJobs" href="#">For job seekers</a>
+                        <a class="nav-link a" routerLink="/login" (click)="onCandidate()">For job seekers</a>
                     </div>
                     <div style="margin: 10px;margin-right: 40px;font-weight:500;font-size:17px ;">
-                        <a class="nav-link a" href="#">For companies</a>
+                        <a class="nav-link a" routerLink="/login" (click)="onCompanies()">For companies</a>
                     </div>
                     <div style="margin: 10px;margin-right: 40px;font-weight:500;font-size:17px ;">
                         <a class="nav-link a" routerLink="/search">Job Search</a>
@@ -25,34 +25,6 @@
                     <div style="margin-right: 60px;">
                         <button class="btn btn-outline" routerLink="/candidateSignup" type="submit" style="background-color: black;color:white ;">Sign
                             Up</button>
-                    </div>
-                    <div [hidden]="true" style="padding-left: 380px;padding-top: 10px;">
-                        <div class="d-flex flex-row">
-                            <div style="margin: 10px;margin-right: 40px;font-weight:500;font-size:17px ;">
-                                <a class="nav-link a" routerLink="/search">Job Search</a>
-                            </div>
-                            <div class="me-2 bd-highlight d-flex justify-content-end">
-                                <div class="flex-row bd-highlight">
-                                    <span style="font-size: larger;"><img
-                                            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                                            style="width: 50px ;height:50px;border-radius:50%;">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="flex-row bd-highlight">
-                                <div class="dropdown">
-                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

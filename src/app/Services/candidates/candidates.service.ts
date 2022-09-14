@@ -1,15 +1,21 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { CanDeactivate } from "@angular/router";
-import { Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { ICandidate } from "src/app/Models/candidate.interface";
 import { EditComponent } from "src/app/Profile.module/Candidate/Edit profile/edit.component";
 
 @Injectable()
-export class CandidatesService implements CanDeactivate<EditComponent> {
+export class CandidatesService implements CanDeactivate<EditComponent>, OnInit {
     candidateIDsubject$ = new Subject;
-    onLanding$= new Subject;
+    onLanding$ = new BehaviorSubject(true);
+    onLanding: string | null = "true";
+    onCandidate$ = new BehaviorSubject(false);
     candidatesDataURL: string = "api/candidatesData";
+    
+    ngOnInit(): void {
+       
+    }
     constructor(private _http: HttpClient) {
 
     }
