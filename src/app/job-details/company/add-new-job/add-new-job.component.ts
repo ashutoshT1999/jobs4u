@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-job',
@@ -11,7 +12,7 @@ export class AddNewJobComponent implements OnInit {
   keywords = new Set(['']);
 
   newJob!:FormGroup;
-  constructor(private _fb:FormBuilder) { }
+  constructor(private _fb:FormBuilder, private _router:Router) { }
 
   ngOnInit(): void {
     this.keywords.delete('');
@@ -24,7 +25,7 @@ export class AddNewJobComponent implements OnInit {
       ctc: ['', Validators.required],
       description: ['', [Validators.required]],
       numberOfOpenings:['', Validators.required],
-      skills: ['', [Validators.required]]
+      skills: ['']
     })
     
   }
@@ -41,5 +42,12 @@ export class AddNewJobComponent implements OnInit {
     this.keywords.delete(keyword);
   }
 
+  submit(){
+    console.log(this.newJob);
+    
+    if(this.newJob.valid){
+      this._router.navigate(['/postedJobs']);
+    }
+  }
 
 }
