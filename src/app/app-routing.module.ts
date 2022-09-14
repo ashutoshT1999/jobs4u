@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { LandingPageComponent } from './Landing_page/landing-page.component';
 import { LoginComponent } from './Login-and-Signup/login/login.component';
+import { MainSignupPageComponent } from './Login-and-Signup/main-signup-page/main-signup-page.component';
 import { SignUpJobSeekersComponent } from './Login-and-Signup/sign-up-job-seekers/sign-up-job-seekers.component';
 import { SignupCompanyComponent } from './Login-and-Signup/signup-company/signup-company.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -13,10 +14,11 @@ const routes: Routes = [
   { path: 'home', component: LandingPageComponent },
   { path: 'search', component: JobSearchComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'mainSignup', component: MainSignupPageComponent},
   { path: 'candidateSignup', component: SignUpJobSeekersComponent },
   { path: 'companySignup', component: SignupCompanyComponent },
-  { path:  'candidateView',component: ViewComponent },
-  { path:  'companyView',component: ViewCompanyComponent },
+  { path: 'candidateView',component: ViewComponent },
+  { path: 'companyView',component: ViewCompanyComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
