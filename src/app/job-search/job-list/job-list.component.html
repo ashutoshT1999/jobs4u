@@ -2,7 +2,7 @@
   <ul class="list" *ngIf="true">
     <ng-container *ngFor="let job of jobList">
       <li class="list-item" (click)="showDetails(job)">
-        <mat-card class="card">
+        <mat-card class="card  mx-auto">
           <mat-card-title style="line-height:1em;">{{ job.job_title }} </mat-card-title>
           <mat-card-subtitle>{{ job.company_name }} </mat-card-subtitle>
           <mat-card-content>
@@ -10,7 +10,7 @@
             <p>{{ job.salary_offered }} </p> 
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="showDetails(job)">View</button>
+            <button mat-raised-button class="primarybtn" (click)="showDetails(job)">View</button>
           </mat-card-actions>
         </mat-card>
       </li>

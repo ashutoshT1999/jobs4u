@@ -13,16 +13,13 @@ input[type=number] {
 .mat-input {
   width: 100% !important;
 }
-.row{
-  width: 100%;
-
-}
 
 .file-input-container{
   position: relative;
   padding: 1rem;
   margin: 1em;
-  border: 2px solid rgb(230, 224, 234);
+  margin-bottom: 0;
+  border: 2px solid #e9e9ea;
   border-radius: 0.4rem;
 }
 .file-input-container>label{
@@ -34,4 +31,11 @@ input[type=number] {
 .file-input-container>input{
   font-size: 1rem;
   width: 100%;
+}
+
+.upload-resume-error{
+  font-size: 0.7rem;
+  margin-left: 0.8rem;
+  margin-top: 0.1rem;
+  color:#f44336;
 }
