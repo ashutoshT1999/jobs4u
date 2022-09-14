@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-jobs',
@@ -11,7 +12,8 @@ export class EditJobsComponent implements OnInit {
   keywords = new Set(['']);
 
   newJob!:FormGroup;
-  constructor(private _fb:FormBuilder) { }
+  jobID:number = -1;
+  constructor(private _fb:FormBuilder, private _routed:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.keywords.delete('');
@@ -26,6 +28,9 @@ export class EditJobsComponent implements OnInit {
       numberOfOpenings:['', Validators.required],
       skills: ['', [Validators.required]]
     })
+    
+    this.jobID = Number(this._routed.snapshot.queryParamMap.get('id'));
+    console.log(this.jobID);
     
   }
 
