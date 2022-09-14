@@ -1,0 +1,18 @@
+.screen-dimensions{
+    height: 100vh;
+    width: 100vw;
+}
+
+.item-center{
+    display: grid;
+    place-content: center;
+}
+.item-left{
+    display: grid;
+    place-content: justify;
+}
+.margin{
+    margin-top: 10px;
+}
+
+

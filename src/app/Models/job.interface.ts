@@ -1,15 +1,18 @@
 export interface IJob{
   id: number;
-  title: string;
-  companyName: string;
+  job_title: string;
+  company_name: string;
   category: string;
   city: string;
   country: string;
-  dateOfPosting: string;
-  lastDate: string;
+  post_date: string;
+  job_type: string;
+  valid_through: string;
   isClosed: boolean;
-  salary: string;
-  description: string;
-  experienceRequired: number;
-  totalApplicationCount: number;
+  salary_offered: string;
+  job_description: string;
+  required_skills: string;
+  experienceRequired?: number;
+  totalApplicationCount?: number;
+  html_job_description: string;
 }

@@ -5,15 +5,14 @@
             <form [formGroup]="SignupJobSeekersForm" (ngSubmit)="submit()">
                 <div class="row">
                 <div class="center">
-                    <h1><b>Join us</b></h1>
+                    <h1><b>Join us Candidate</b></h1>
                 </div>
                 </div>  
                 <div class="row margin-top">
                   <mat-form-field class="example-form-field" appearance="outline">
                     <mat-label>Email</mat-label>
                         <input matInput type="text" formControlName="email" >
-                            <mat-error *ngIf="SignupJobSeekersForm.get('email')!.errors!['required']">Email Required</mat-error>
-                            <mat-error *ngIf= " !SignupJobSeekersForm.get('email')!.errors!['required'] && SignupJobSeekersForm.get('email')!.errors!==null &&  SignupJobSeekersForm.get('email')!.errors!['emailmismatch']">Enter a valid email id</mat-error>
+                            <mat-error>Email Required</mat-error>
                   </mat-form-field>
                 </div>
     
@@ -21,16 +20,14 @@
                  <mat-form-field class="example-form-field" appearance="outline">
                    <mat-label>Password</mat-label>
                         <input matInput type="password" formControlName="password" >
-                            <mat-error *ngIf="SignupJobSeekersForm.get('password')!.errors!['required']">Password is required</mat-error>
-                            <mat-error *ngIf="SignupJobSeekersForm.get('password')!.errors!==null && !SignupJobSeekersForm.get('password')!.errors!['required'] && SignupJobSeekersForm.get('password')!.errors!['minLength']">Password should be of minimum 8 characters</mat-error>
-
+                            <mat-error>Password is required</mat-error>
                  </mat-form-field>
                 </div>
                 <div class="row">      
                     <mat-form-field class="example-form-field" appearance="outline">
                       <mat-label>Re-enter password</mat-label>
                            <input matInput type="password" formControlName="password2" >
-                               <mat-error *ngIf="SignupJobSeekersForm.get('password2')!.errors!==null && SignupJobSeekersForm.get('password2')!.errors!['required']">Password is required</mat-error>
+                               <mat-error>Password is required</mat-error>
                     </mat-form-field>
                    </div>
 
@@ -38,7 +35,7 @@
                     <button mat-raised-button class="primarybtn" type="submit" style="background-color: black;color:white ;">Sign Up</button>
                 </div>
                 <div class="margin-top text-center">
-                    <label style="font-size: 15px;">Already a user? <a href="">Login</a></label>
+                    <label style="font-size: 15px;">Already a user? <a routerLink="/login">Login</a></label>
                 </div>
             </form> 
         </div>    
