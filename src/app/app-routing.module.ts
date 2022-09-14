@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditJobsComponent } from './job-details/company/edit-jobs/edit-jobs.component';
 import { PostedJobsComponent } from './job-details/company/posted-jobs/posted-jobs.component';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { LandingPageComponent } from './Landing_page/landing-page.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'candidateSignup', component: SignUpJobSeekersComponent },
   {path: 'postedJobs', component: PostedJobsComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path: 'postedJobs/edit', component:EditJobsComponent},
+  { path: '', redirectTo: 'postedJobs', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

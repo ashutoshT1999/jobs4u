@@ -19,6 +19,7 @@ import { CompaniesService } from './Services/companies/companies.service';
 import { CandidatesService } from './Services/candidates/candidates.service';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { NavbarOtherModule } from './navbar-other/navbar-other.module';
+import { JobsServices } from './Services/Jobs/jobs.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { NavbarOtherModule } from './navbar-other/navbar-other.module';
 //     InMemoryWebApiModule.forRoot(DataSourceService)
 // >>>>>>> 3f63e6522a1e10a4c1bd530b10b9f788b264eb0e
   ],
-  providers: [CompaniesService, CandidatesService, DataSourceService],
+  providers: [CompaniesService, CandidatesService, DataSourceService, JobsServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
