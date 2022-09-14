@@ -7,7 +7,7 @@ import { EditCompanyComponent } from "src/app/Profile.module/Company/Edit profil
 
 @Injectable()
 export class CompaniesService implements CanDeactivate<EditCompanyComponent>,OnInit {
-    companyIDsubject$ = new Subject;
+    companyIDsubject$ = new Subject();
     companiesDataURL: string = "api/companiesData";
     onCompanies$= new BehaviorSubject(false);
     constructor(private _http: HttpClient) {
