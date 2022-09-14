@@ -4,6 +4,7 @@ import { AppliedJobsComponent } from './job-details/candidate/applied-jobs/appli
 import { AddNewJobComponent } from './job-details/company/add-new-job/add-new-job.component';
 import { EditJobsComponent } from './job-details/company/edit-jobs/edit-jobs.component';
 import { PostedJobsComponent } from './job-details/company/posted-jobs/posted-jobs.component';
+import { JobApplyComponent } from './job-search/job-apply/job-apply.component';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { LandingPageComponent } from './Landing_page/landing-page.component';
 import { LoginComponent } from './Login-and-Signup/login/login.component';
@@ -19,12 +20,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'candidateSignup', component: SignUpJobSeekersComponent },
   { path: 'companySignup', component: SignupCompanyComponent },
-  { path: 'candidateView', component: ViewComponent },
-  { path: 'companyView', component: ViewCompanyComponent },
-  { path: 'postedJobs', component: PostedJobsComponent },
-  { path: 'postedJobs/edit', component: EditJobsComponent },
-  { path: 'appliedJobs', component: AppliedJobsComponent },
-  { path: 'newJob', component: AddNewJobComponent },
+  { path: 'candidateView',component: ViewComponent },
+  { path: 'companyView',component: ViewCompanyComponent },
+  { path: 'postedJobs', component: PostedJobsComponent},
+  { path: 'postedJobs/edit', component:EditJobsComponent},
+  { path: 'appliedJobs', component:AppliedJobsComponent},
+  { path: 'newJob', component: AddNewJobComponent},
+  { path: 'job/apply/:id', component: JobApplyComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
