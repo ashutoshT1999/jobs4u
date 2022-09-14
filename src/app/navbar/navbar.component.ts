@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidatesService } from '../Services/candidates/candidates.service';
+import { CompaniesService } from '../Services/companies/companies.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +9,19 @@ import { CandidatesService } from '../Services/candidates/candidates.service';
 })
 export class NavbarComponent implements OnInit {
 
-  onLanding:any=true;
-  constructor(private _data:CandidatesService) { }
+  constructor(private _data:CandidatesService,private _data2:CompaniesService) { }
 
   ngOnInit(): void {
-    this._data.onLanding$.subscribe(data=>{
-      this.onLanding = data;
-    })
+  
+  }
+
+  onCandidate(){
+    this._data.onCandidate$.next(true);
+
+  }
+  onCompanies(){
+    this._data2.onCompanies$.next(true);
+  
   }
 
 }

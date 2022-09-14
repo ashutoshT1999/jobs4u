@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page.component';
 import { MaterialsModule } from '../material/material.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,7 @@ import { MaterialsModule } from '../material/material.module';
     LandingPageComponent
   ],
   imports: [
-    CommonModule,MaterialsModule
+    CommonModule,MaterialsModule,RouterModule
   ],
   exports:[
     LandingPageComponent

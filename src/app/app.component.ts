@@ -8,7 +8,7 @@ import { CandidatesService } from './Services/candidates/candidates.service';
 })
 export class AppComponent implements OnInit {
   title = 'jobs4u';
-  onLanding: any = true;
+  onLanding:any=true;
   constructor(private _data: CandidatesService) {
 
   }
@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
     this._data.onLanding$.subscribe(data => {
       this.onLanding = data;
     })
-
+   
   }
+ 
 
 }

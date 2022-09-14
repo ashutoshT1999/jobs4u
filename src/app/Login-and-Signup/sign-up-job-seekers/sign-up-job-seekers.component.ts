@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 
@@ -7,7 +7,7 @@ import { CandidatesService } from 'src/app/Services/candidates/candidates.servic
   templateUrl: './sign-up-job-seekers.component.html',
   styleUrls: ['./sign-up-job-seekers.component.css']
 })
-export class SignUpJobSeekersComponent implements OnInit {
+export class SignUpJobSeekersComponent implements OnInit,OnDestroy {
   SignupJobSeekersForm!:FormGroup;
   pass1:string='';
   pass2:string='';
@@ -15,7 +15,7 @@ export class SignUpJobSeekersComponent implements OnInit {
   constructor(private _fb:FormBuilder,private _candidate:CandidatesService) {}   
   ngOnInit(): void {
     this.SignupJobSeekersForm=this._fb.group({
-      
+
         email:['',[Validators.required,Validators.email]],
         password:['', Validators.required],
         password2:['', Validators.required]
@@ -23,39 +23,8 @@ export class SignUpJobSeekersComponent implements OnInit {
     })
     this._candidate.onLanding$.next(false);
   }
-// ngOnChanges():void{
-  
-//   this.SignupJobSeekersForm.get('password')?.valueChanges.subscribe(x=>{
-//     this.pass1=x;
-//   })
-//   this.SignupJobSeekersForm.get('password2')?.valueChanges.subscribe(x=>{
-//     this.pass2=x;
-//     if(this.pass1!==this.pass2){
-//       this.errorPassword=true;
-//     }
-//     else{
-//       this.errorPassword=false;
-//     }
-//     console.log(this.errorPassword, this.pass1, this.pass2);
-//   })
-
-
-// }
-
-  submit(){
-
+  ngOnDestroy(){
   }
-
-  // isSamePassword(){
-  //   if(this.pass1==this.pass2){
-  //     console.log("true");
-  //     console.log(this.pass1);
-  //     this.errorPassword=true;
-  //   }
-  //   else{
-  //     console.log("false");
-  //     console.log(this.pass2);
-  //     this.errorPassword=false;
-  //   }
-  // }
+  submit(){
+  }
 }
