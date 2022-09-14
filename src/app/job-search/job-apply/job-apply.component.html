@@ -1,0 +1,72 @@
+<section class="mt-5">
+  <div>
+    <h1 class="text-center fs-1">Job Application</h1>
+  </div>
+  <form [formGroup]="jobApplicationForm" (ngSubmit)="apply()" class="form mat-elevation-z3 col-11 col-lg-8 mt-5 mx-auto p-5 pb-4 border">
+    <div class="row">
+      <div class="form-input-container col-10 col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Enter First Name" formControlName="firstName">             
+          <mat-error>First Name is required</mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-10 col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Middle Name</mat-label>
+          <input matInput placeholder="Enter Middle Name" formControlName="middleName">             
+          <mat-error></mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-10 col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Enter Last Name" formControlName="lastName">             
+          <mat-error>Last Name is required</mat-error>               
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-input-container col-10 col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Enter your email" formControlName="email">             
+          <mat-error></mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-10 col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter your Contact Number" formControlName="contactNumber">             
+          <mat-error></mat-error>               
+        </mat-form-field>
+      </div>
+      <div class="form-input-container col-10 col-lg-4">
+        <mat-form-field class="mat-input" appearance="outline">
+          <mat-label>Qualification</mat-label>
+          <mat-select matInput formControlName="qualification">
+            <mat-option value="postgraduate">Postgraduate</mat-option>
+            <mat-option value="Graduate">Graduate</mat-option>
+            <mat-option value="undergraduate">Undergraduate</mat-option>
+            <mat-option value="12th">12th</mat-option>
+            <mat-option value="10th">10th</mat-option>
+          </mat-select>     
+          <mat-error></mat-error>               
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">      
+      <div class="col file-input-container">
+        <label>Upload your Resume <span class="text-danger">*</span></label>
+        <input type="file" formControlName="resume">             
+      </div>  
+      <span *ngIf="jobApplicationForm.touched && jobApplicationForm.get('resume')!.errors !== null && jobApplicationForm.get('resume')!.errors!['required'] " class="fs-6 text-danger">Resume required</span>
+    </div>    
+
+    <div class="row mt-3 ">
+      <button mat-raised-button color="primary" type="submit" class="col-10 col-md-3 mx-auto py-2 fs-4">Apply</button>
+    </div>
+  </form>
+</section>

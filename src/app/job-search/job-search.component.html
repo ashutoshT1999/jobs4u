@@ -44,7 +44,7 @@
 </section>
 
 <!-- <section class="search-body d-flex" *ngIf="show"> -->
-<section class="search-body d-md-flex" [hidden]="hideResults">
+<section class="search-body d-md-flex justify-content-center" [hidden]="hideResults">
   <section class="left-section">
     <app-job-list #jobList (resultFoundEvent)="showResult($event)" ></app-job-list>
   </section>
