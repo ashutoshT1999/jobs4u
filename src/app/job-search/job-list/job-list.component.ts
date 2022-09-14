@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { IJob } from 'src/app/Models/job.interface';
 import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 })
 export class JobListComponent implements OnInit {
 
-  jobList = [
+  jobList:IJob[] = [
     { 
       id: 0,
       job_title: "",
@@ -25,13 +26,14 @@ export class JobListComponent implements OnInit {
       html_job_description:``
     }
   ];
+
   @Output()
   resultFoundEvent:EventEmitter<boolean>=new EventEmitter<boolean>()
   
   constructor(private _jobService:JobsServices) { }
 
   ngOnInit(): void {
-    this._jobService.getJobList().subscribe(dataList=> {
+    this._jobService.getJobList().subscribe((dataList:any)=> {
       this.jobList=dataList
     });
   }
@@ -41,14 +43,15 @@ export class JobListComponent implements OnInit {
   }
 
   filterJob(title:string,location:string){
-    this._jobService.getJobList().subscribe(dataList=> {
-      this.jobList=dataList.filter((obj:any)=>(title === obj.category || title === 'all') && (location === obj.inferred_city || location === 'all'));
+
+    this._jobService.getJobList().subscribe(dataList=> {      
+      this.jobList=dataList.filter((obj:any)=>(title === obj.category || title === 'all') && (location === obj.city || location === 'all'));      
       if(this.jobList.length) {
         this.resultFoundEvent.emit(true);
-      this._jobService.displayJob$.next(this.jobList[0]);
-
+        this._jobService.displayJob$.next(this.jobList[0]);
+      } else {
+        this.resultFoundEvent.emit(false);
       }
-      else this.resultFoundEvent.emit(false);
     });
   }
 

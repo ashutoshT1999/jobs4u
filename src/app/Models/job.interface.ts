@@ -8,7 +8,7 @@ export interface IJob{
   post_date: string;
   job_type: string;
   valid_through: string;
-  isClosed: boolean;
+  isClosed?: boolean;
   salary_offered: string;
   job_description: string;
   required_skills: string;
