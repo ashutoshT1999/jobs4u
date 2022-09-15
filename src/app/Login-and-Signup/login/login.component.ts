@@ -14,17 +14,18 @@ export class LoginComponent implements OnInit {
 
   LoginForm!: FormGroup;
   userData: any[] = [];
+  Loggedin: boolean = true;
   constructor(private _fb: FormBuilder, private _candidate: CandidatesService, private _company: CompaniesService, private _route: Router) { }
   ngOnInit(): void {
     this.LoginForm = this._fb.group({
-      
+
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      
+
     })
-    
+
     this._candidate.onLanding$.next(false);
-    
+
   }
   submitLoginForm(form: FormGroup) {
     if (form.valid) {
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
         })
         this._route.navigate(['/candidateView']);
       }
-      else if(form.value.email == "Globallogic.company@gmail.com" || form.value.email == "Learnify-Me.company@gmail.com" || form.value.email == "hitachi.company@gmail.com"){
+      else if (form.value.email == "Globallogic.company@gmail.com" || form.value.email == "Learnify-Me.company@gmail.com" || form.value.email == "hitachi.company@gmail.com") {
         this._company.userID(form.value.email);
         this._company.Loggedin$.next(true);
         this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
@@ -48,6 +49,9 @@ export class LoginComponent implements OnInit {
 
         })
         this._route.navigate(['/companyView']);
+      }
+      else {
+        this.Loggedin = false;
       }
     }
   }
