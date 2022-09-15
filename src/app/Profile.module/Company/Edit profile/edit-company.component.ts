@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Route, Router } from '@angular/router';
+import { CompaniesService } from 'src/app/Services/companies/companies.service';
 
 @Component({
   selector: 'app-edit-company',
@@ -9,10 +11,18 @@ import { Route, Router } from '@angular/router';
 })
 export class EditCompanyComponent implements OnInit {
 
-  constructor(private _fb: FormBuilder, private _route: Router) {
+  isSubmitted:boolean=false;
+  userData:any[]=[];
+  constructor(private _fb: FormBuilder, private _route: Router,private _snackBar: MatSnackBar,private _company:CompaniesService) {
   }
 
   ngOnInit(): void {
+    this._company.companyIDsubject$.subscribe((data) => {
+      this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
+        this.userData = companyData.filter(x => x.emailID == data);
+        this.setDefault();
+      })
+    })
   }
 
   editCompany = this._fb.group({
@@ -26,6 +36,16 @@ export class EditCompanyComponent implements OnInit {
   })
   email = new FormControl('', [Validators.required, Validators.email]);
 
+  openSnackBar() { 
+    if(this.editCompany.valid){
+      this._snackBar.open("Data saved succesfully.","OK");  
+      this.isSubmitted = true;  
+    }
+    else{
+      this._snackBar.open("Please fill all the form details carefully","OK"); 
+      this.isSubmitted = false;
+    }
+  }
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
@@ -34,7 +54,23 @@ export class EditCompanyComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
   routeView(){
-    this._route.navigate(["/companyView"]);
+    if(this.editCompany.valid){
+      this._route.navigate(["/companyView"]);
+    }
+  }
+  setDefault() {
+ 
+    let details = {
+      companyName: this.userData[0].companyName,
+      companyType:  this.userData[0].companyType,
+      companyOffices:  this.userData[0].companyOffices,
+      hiringDomains:  this.userData[0].hiringDomains,
+      emailID:  this.userData[0].emailID,
+      contactInfo:  this.userData[0].contactInfo,
+      aboutCompany:  this.userData[0].aboutCompany,
+    };
+ 
+    this.editCompany.setValue(details);
   }
 
   CompanyOffices: string[] = ["Andhra Pradesh",

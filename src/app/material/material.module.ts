@@ -19,7 +19,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -27,12 +27,12 @@ import {MatCardModule} from '@angular/material/card';
     CommonModule,NgbModule,
     MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule, MatIconModule,
     MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule, MatAutocompleteModule,
-    MatCardModule
+    MatCardModule,MatSnackBarModule
   ],
   exports: [
     MatFormFieldModule, MatInputModule, MatDialogModule, MatDatepickerModule,MatNativeDateModule,ReactiveFormsModule, MatIconModule,
     MatTableModule, MatButtonModule, MatSelectModule, MatProgressSpinnerModule, MatToolbarModule,MatChipsModule,MatDividerModule, MatAutocompleteModule,
-    MatCardModule
+    MatCardModule,MatSnackBarModule
   ]
 })
 export class MaterialsModule { }
