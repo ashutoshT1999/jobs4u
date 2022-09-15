@@ -29,7 +29,6 @@ export class ViewComponent implements OnInit {
     this._candidate.candidateIDsubject$.subscribe((data) => {
       this._candidate.getCandidatesDatabyAPI().subscribe((candidateData) => {
         this.userDataBySubject = candidateData.filter(x => x.email == data);
-        console.log(this.userDataBySubject);
       })
     })
   }

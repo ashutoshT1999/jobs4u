@@ -2,12 +2,12 @@
     <div class="d-flex flex-row w-100">
         <div class="d-flex flex-row col-md-6" style="margin-right:auto;">
             <div class="m-2" style="padding-left: 2rem;">
-                <a class="navbar-brand" href="#"><img src="./assets/static/logo.png" width="160px" height="50px"
+                <a class="navbar-brand" routerLink="/home" (click)="onLanding()"><img src="./assets/static/logo.png" width="160px" height="50px"
                         alt=""></a>
             </div>
             <div class="d-flex flex-row mt-4" style="padding-left:40px ;">
                 <div style="margin-right: 2rem;">
-                    <a href="#" style="text-decoration: none;"><span style="color: white;">Home</span></a>
+                    <a routerLink="/home" (click)="onLanding()" style="text-decoration: none;"><span style="color: white;">Home</span></a>
                 </div>
                 <div>
                     <a routerLink="/search" routerLinkActive="active" style="text-decoration: none;color: white;">Job
@@ -53,15 +53,15 @@
                                     <li style="margin-bottom: 0.4rem;"><a class="dropdown-item disabled" href="#"
                                             style="font-weight:bold;color:black ;">Logged in as:</a></li>
                                     <li class="dropdown-item disabled" style="margin-bottom: 0.1rem;">
-                                        <p style="color:black ;"></p>
+                                        <p style="color:black ;">{{userName}}</p>
                                     </li>
                                     <mat-divider style="margin-bottom: 0.4rem;"></mat-divider>
-                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" href="#">My Profile</a>
+                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" routerLink="" href="#">My Profile</a>
                                     </li>
                                     <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" href="#">About us</a>
                                     </li>
                                     <mat-divider style="margin-bottom: 0.4rem;"></mat-divider>
-                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" href="#">Log out</a>
+                                    <li style="margin-bottom: 0.4rem;"><a class="dropdown-item" (click)="loggedOut()" routerLink="/login">Log out</a>
                                     </li>
                                 </ul>
                             </div>
