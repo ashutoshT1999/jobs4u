@@ -13,8 +13,6 @@ import { CompaniesService } from 'src/app/Services/companies/companies.service';
 export class LoginComponent implements OnInit {
 
   LoginForm!: FormGroup;
-  onCandidate: any = false;
-  onCompany: any = false;
   userData: any[] = [];
   constructor(private _fb: FormBuilder, private _candidate: CandidatesService, private _company: CompaniesService, private _route: Router) { }
   ngOnInit(): void {
@@ -26,14 +24,6 @@ export class LoginComponent implements OnInit {
     })
 
     this._candidate.onLanding$.next(false);
-
-    this._candidate.onCandidate$.subscribe(x => {
-      this.onCandidate = x;
-    })
-    this._company.onCompanies$.subscribe(x => {
-      this.onCompany = x;
-    })
-
 
   }
   submitLoginForm(form: FormGroup) {
