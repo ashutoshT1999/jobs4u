@@ -104,6 +104,12 @@ export class DataSourceService implements InMemoryDbService {
       jobs:[
         {
           id: 1,          
+          isClosed: true,
+          totalApplicationCount: 8,
+          description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit a vel fuga voluptatem ratione distinctio illo repudiandae. Aliquid, quis eum quasi nobis labore pariatur nisi dolores, id saepe nesciunt exercitationem!
+          Sunt quis itaque excepturi harum ipsum est aut optio atque soluta, et minus magnam sint iure blanditiis temporibus autem deserunt neque pariatur minima distinctio reiciendis eum natus vitae! Cupiditate, ut!`,
+          roleAndResponsibility: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit a vel fuga voluptatem ratione distinctio illo repudiandae. Aliquid, quis eum quasi nobis labore pariatur nisi dolores, id saepe nesciunt exercitationem!
+          Sunt quis itaque excepturi harum ipsum est aut optio atque soluta, et minus magnam sint iure blanditiis temporibus autem deserunt neque pariatur minima distinctio reiciendis eum natus vitae! Cupiditate, ut!`,
           job_title: 'Design Engineer',          
           category: 'Engineering Design',          
           company_name: 'GlobalLogic Pvt Limited',          
@@ -119,6 +125,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {        
           id: 2,          
+          isClosed: true,
+          totalApplicationCount: 2,
           job_title: 'Assistant Manager Finance',
           category: 'Accounts',          
           company_name: 'GlobalLogic Pvt Limited',
@@ -135,6 +143,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 3,          
+          isClosed: true,
+          totalApplicationCount: 5,
           job_title: 'Content Lead',
           category: 'Journalism',          
           company_name: 'GlobalLogic Pvt Limited',
@@ -151,6 +161,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 4,          
+          isClosed: true,
+          totalApplicationCount: 9,
           job_title: 'Facilitators Hospitality',
           category: 'Hotels',          
           company_name: 'GlobalLogic Pvt Limited',
@@ -166,6 +178,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 5,          
+          isClosed: true,
+          totalApplicationCount: 3,
           job_title: 'Consultant - General Physician',
           category: 'Medical',          
           company_name: 'GlobalLogic Pvt Limited',
@@ -182,6 +196,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 6,          
+          isClosed: true,
+          totalApplicationCount: 7,
           job_title: 'Web Content Writer',
           category: 'I',          
           company_name: 'Learnify-Me Pvt Limited',
@@ -198,6 +214,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 7,          
+          isClosed: true,
+          totalApplicationCount: 5,
           job_title: 'Sr . Manager / AVP - Strategy',
           category: 'Sales',          
           company_name: 'Learnify-Me Pvt Limited',
@@ -214,6 +232,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 8,          
+          isClosed: true,
+          totalApplicationCount: 12,
           job_title: 'Toolroom Engineer/ Sr. Engineer ( Assembly/ Fitting)',
           category: 'Production',          
           company_name: 'Learnify-Me Pvt Limited',
@@ -229,6 +249,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 9,          
+          isClosed: false,
+          totalApplicationCount: 0,
           job_title: 'Flame Artist',
           category: 'Production',          
           company_name: 'Learnify-Me Pvt Limited',
@@ -244,6 +266,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 10,          
+          isClosed: false,
+          totalApplicationCount: 1,
           job_title: 'Associate 2 - FX DBM',
           category: 'Financial Services',          
           company_name: 'Learnify-Me Pvt Limited',
@@ -260,6 +284,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 11,          
+          isClosed: false,
+          totalApplicationCount: 7,
           job_title: 'Business Development Executive',
           category: 'Sales',          
           company_name: 'Hitachi Pvt Limited',
@@ -275,6 +301,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 12,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'java Developer Individual Contributor',
           category: 'IT Software - Application Programming',          
           company_name: 'Hitachi Pvt Limited',
@@ -290,6 +318,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 13,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Job Opportunity For 2+ yrs in Business To Businees(b2b)collections',
           category: 'ITES',          
           company_name: 'Hitachi Pvt Limited',
@@ -305,6 +335,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 14,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Expert - O2C',
           category: 'ITES',          
           company_name: 'Hitachi Pvt Limited',
@@ -321,6 +353,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 15,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Manager 2, Accounts Receivable',
           category: 'Accounts',          
           company_name: 'Hitachi Pvt Limited',
@@ -336,6 +370,8 @@ export class DataSourceService implements InMemoryDbService {
         },  
         {          
           id: 16,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Hiring For .Net Developer',
           category: 'IT Software - Application Prgramming',          
           company_name: 'Hitachi Pvt Limited',
@@ -352,6 +388,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 17,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Immediate Requirement For JAVA Developer (hyderabad)',
           category: 'ITES',          
           company_name: 'Hitachi Pvt Limited',
@@ -368,6 +406,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 18,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Fresher Jr Java Developers (Immediate joining)',
           category: 'IT Software - Application Programming',          
           company_name: 'Learnify-Me Pvt Limited',
@@ -384,6 +424,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 19,          
+          isClosed: false,
+          totalApplicationCount: 8,
           job_title: 'Executive Assistant',
           category: 'Executive Assistant',          
           company_name: 'GlobalLogic Pvt Limited',
@@ -400,6 +442,8 @@ export class DataSourceService implements InMemoryDbService {
         },
         {
           id: 20,          
+          isClosed: true,
+          totalApplicationCount: 8,
           job_title: 'Area Sales Manager',
           category: 'Sales',          
           company_name: 'GlobalLogic Pvt Limited',

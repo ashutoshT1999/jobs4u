@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ICandidate } from 'src/app/Models/candidate.interface';
 import { IJob } from 'src/app/Models/job.interface';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
+import { PostedJobDialog } from '../../company/posted-jobs/complete-description/completeDescription.dialog';
+
 
 @Component({
   selector: 'app-applied-jobs',
@@ -28,7 +31,7 @@ export class AppliedJobsComponent implements OnInit {
 
   jobData: IJob[] = [] ;
 
-  constructor(private _candidate: CandidatesService, private _jobs:JobsServices) { }
+  constructor(private _candidate: CandidatesService, private _jobs:JobsServices, private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this._candidate.candidateIDsubject$.subscribe((data) => {
@@ -46,7 +49,17 @@ export class AppliedJobsComponent implements OnInit {
 
   }
 
-  details(){
-    
+  details(jobName:string, companyName:string, city:string, country:string, category:string, salary:string, validThrough:string){
+    this.dialog.open(PostedJobDialog, {
+      data: {
+        jobName: jobName,
+        companyName: companyName,
+        city: city,
+        country: country,
+        category: category,
+        salary:salary,
+        validThrough: validThrough
+      }
+    });
   }
 }
