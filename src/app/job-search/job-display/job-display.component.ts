@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IJob } from 'src/app/Models/job.interface';
+import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 
 @Component({
@@ -8,6 +10,7 @@ import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
   styleUrls: ['./job-display.component.css']
 })
 export class JobDisplayComponent implements OnInit {
+  
   job:IJob={ 
     id: 0,
     job_title: "",
@@ -22,11 +25,12 @@ export class JobDisplayComponent implements OnInit {
     job_description: '',
     required_skills: '',
     html_job_description:``
-  }
+  };
 
-  constructor(private _jobService:JobsServices) { }
+  constructor(private _router:Router, private _jobService:JobsServices) { }
 
   ngOnInit(): void {
+    
     this._jobService.displayJob$.subscribe(data => this.job=data);
   }
 
