@@ -43,19 +43,6 @@ export class SignupCompanyComponent implements OnInit, OnDestroy {
       this._router.navigate(['/companyEdit']);
     }
   }
-  addProduct() {
-    const data = {
-      email: this.SignupCompanyForm.value.email,
-      password: this.SignupCompanyForm.value.password
-    };
-    this._company.createProduct(data).subscribe(response => {
-      console.log(response);
-    });
-    this._company.getProducts().subscribe((companies) => {
-
-      console.log("this is via HTTP" + companies);
-    })
-  }
 }
 
 
