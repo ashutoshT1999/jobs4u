@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CandidatesService } from '../Services/candidates/candidates.service';
 import { CompaniesService } from '../Services/companies/companies.service';
 
@@ -10,7 +11,9 @@ import { CompaniesService } from '../Services/companies/companies.service';
 export class NavbarOtherComponent implements OnInit {
 
   userName: string | null = "";
-  constructor(private _data: CandidatesService, private _data2: CompaniesService) { }
+  onCandidate:any=false;
+  onCompany:any=false;
+  constructor(private _data: CandidatesService, private _data2: CompaniesService,private _router:Router) { }
   loggedin: any = false;
   ngOnInit(): void {
     this._data2.Loggedin$.subscribe(x => {
@@ -21,13 +24,12 @@ export class NavbarOtherComponent implements OnInit {
       this.userName = x;
 
     })
-
-  }
-
-  onCompanies() {
-    this._data2.onCompanies$.next(true);
-    this._data.onCandidate$.next(false);
-
+   this._data.onCandidate$.subscribe(x=>{
+    this.onCandidate = x;
+   })
+   this._data2.onCompanies$.subscribe(x=>{
+    this.onCompany = x
+   })
   }
   onLanding() {
     this._data.onLanding$.next(true);
@@ -36,5 +38,13 @@ export class NavbarOtherComponent implements OnInit {
   loggedOut() {
 
     this._data2.Loggedin$.next(false);
+  }
+  routeView(){
+     if(this.onCandidate){
+        this._router.navigate(['/candidateView'])
+     }
+     else if(this.onCompany){
+      this._router.navigate(['companyView']);
+     }
   }
 }

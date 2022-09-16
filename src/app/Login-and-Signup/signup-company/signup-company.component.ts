@@ -12,6 +12,7 @@ import { CompaniesService } from 'src/app/Services/companies/companies.service';
 export class SignupCompanyComponent implements OnInit, OnDestroy {
 
   SignupCompanyForm!: FormGroup;
+  userData: any[] = [];
   constructor(private _fb: FormBuilder, private _candidate: CandidatesService, private _company: CompaniesService, private _router: Router) { }
 
   ngOnInit(): void {
@@ -33,8 +34,17 @@ export class SignupCompanyComponent implements OnInit, OnDestroy {
 
   submit(form: FormGroup) {
     if (form.valid) {
-      this._router.navigate(['/companyEdit']);
-      this._company.Loggedin$.next(true);
+
+      if (form.value.email == "Globallogic.company@gmail.com" || form.value.email == "Learnify-Me.company@gmail.com" || form.value.email == "hitachi.company@gmail.com") {
+        this._company.userID(form.value.email);
+        this._company.Loggedin$.next(true);
+        this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
+          this.userData = companyData.filter(x => x.emailID == form.value.email);
+          this._company.userName$.next(this.userData[0].companyName);
+
+        })
+        this._router.navigate(['/companyEdit']);
+      }
     }
 
   }

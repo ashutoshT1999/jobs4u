@@ -97,11 +97,6 @@
             [matChipInputFor]="chipList"
             (matChipInputTokenEnd)="addKeywordFromInput($event)" formControlName="ctc">
             </mat-chip-list>
-            <!-- <ng-container *ngIf="!this.newJob.dirty">
-               <mat-error *ngIf="newJob.get('skills')!.errors!==null && newJob.get('skills')!.errors!['required']">
-                    * This field is required
-                </mat-error> 
-            </ng-container> -->
             
         </mat-form-field>
 
@@ -125,7 +120,7 @@
 
         <div class="col-md-12">
             <button mat-raised-button class="col-md-auto primarybtn" (click)="submit()">Post</button>
-            <button mat-raised-button class="col-md-auto mx-4 secondarybtn">Cancel</button>
+            <button mat-raised-button class="col-md-auto mx-4 secondarybtn" routerLink="/postedJobs">Cancel</button>
         </div>
             
     </form>

@@ -1,12 +1,12 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, OnInit } from "@angular/core";
+import { Injectable, OnDestroy, OnInit } from "@angular/core";
 import { CanDeactivate } from "@angular/router";
 import { BehaviorSubject, Observable } from "rxjs";
 import { ICompany } from "src/app/Models/company.interface";
 import { EditCompanyComponent } from "src/app/Profile.module/Company/Edit profile/edit-company.component";
 
 @Injectable()
-export class CompaniesService implements CanDeactivate<EditCompanyComponent>, OnInit {
+export class CompaniesService implements CanDeactivate<EditCompanyComponent>, OnInit,OnDestroy {
     companyIDsubject$ = new BehaviorSubject("");
     companiesDataURL: string = "api/companiesData";
     onCompanies$ = new BehaviorSubject(false);
@@ -18,6 +18,9 @@ export class CompaniesService implements CanDeactivate<EditCompanyComponent>, On
     ngOnInit(): void {
         this.onCompanies$.next(true);
     }
+    ngOnDestroy(): void {
+        this.onCompanies$.next(false);
+    }
 
     getCompaniesDatabyAPI(): Observable<ICompany[]> {
         return this._http.get<ICompany[]>(this.companiesDataURL);
@@ -28,7 +31,7 @@ export class CompaniesService implements CanDeactivate<EditCompanyComponent>, On
     }
     canDeactivate(component: EditCompanyComponent): Observable<boolean> | Promise<boolean> | boolean {
 
-        if (component.editCompany.dirty) return confirm("Are you sure you want to discard the changes ?");
+        if (component.editCompany.dirty && !component.isSubmitted) return confirm("Are you sure you want to discard the changes ?");
         else return true;
 
     }
