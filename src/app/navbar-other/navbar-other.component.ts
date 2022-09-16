@@ -47,4 +47,9 @@ export class NavbarOtherComponent implements OnInit {
       this._router.navigate(['companyView']);
      }
   }
+  routeJobSearch(){
+    if(this.onCandidate){
+      this._router.navigate(['/search']);
+    }
+  }
 }

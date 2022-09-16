@@ -19,7 +19,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._data.onLanding$.next(false);
-    localStorage.removeItem('landing')
+
   }
   onCandidate() {
     this._data.onCandidate$.next(true);
