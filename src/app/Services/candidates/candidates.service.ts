@@ -42,5 +42,8 @@ export class CandidatesService implements CanDeactivate<EditComponent> {
         return this._http.post<any>(this.candidatesDataURL, candidate);
     }
 
+    editProduct(candidate: ICandidate): Observable<any> {
+        return this._http.put(this.candidatesDataURL, candidate);
+      }
 
 }
