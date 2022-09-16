@@ -32,7 +32,7 @@ export class EditComponent implements OnInit {
       this._candidate.getCandidatesDatabyAPI().subscribe((candidateData) => {
         this.userData = candidateData.filter(x => x.email == data);
         this.setDefault();
-        console.log(this.userData[0].firstName);
+        
       })
     })
 

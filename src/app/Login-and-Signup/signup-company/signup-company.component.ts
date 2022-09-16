@@ -35,17 +35,17 @@ export class SignupCompanyComponent implements OnInit, OnDestroy {
   submit(form: FormGroup) {
     if (form.valid) {
 
-      if (form.value.email == "Globallogic.company@gmail.com" || form.value.email == "Learnify-Me.company@gmail.com" || form.value.email == "hitachi.company@gmail.com") {
-        this._company.userID(form.value.email);
-        this._company.Loggedin$.next(true);
-        this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
-          this.userData = companyData.filter(x => x.emailID == form.value.email);
-          this._company.userName$.next(this.userData[0].companyName);
+      // if (form.value.email == "Globallogic.company@gmail.com" || form.value.email == "Learnify-Me.company@gmail.com" || form.value.email == "hitachi.company@gmail.com") {
+      //   this._company.userID(form.value.email);
+      //   this._company.Loggedin$.next(true);
+      //   this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
+      //     this.userData = companyData.filter(x => x.emailID == form.value.email);
+      //     this._company.userName$.next(this.userData[0].companyName);
 
-        })
-        this._router.navigate(['/companyEdit']);
-      }
+      //   })
+      this._router.navigate(['/companyEdit']);
     }
-
   }
+
 }
+
