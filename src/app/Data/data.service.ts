@@ -73,7 +73,7 @@ export class DataSourceService implements InMemoryDbService {
           emailID: "Globallogic.company@gmail.com",
           contactInfo: "9454752314",
           aboutCompany: "GlobalLogic, a Hitachi Group Company, is a leader in digital product engineering. We help our clients design and build innovative products, platforms, and digital experiences for the modern world. By integrating our strategic design, complex engineering, and vertical industry expertise with Hitachi’s Operating Technology and Information Technology capabilities, we help our clients imagine what’s possible and accelerate their transition into tomorrow’s digital businesses. Headquartered in Silicon Valley, GlobalLogic operates design studios and engineering centers around the world, extending our deep expertise to customers in the automotive, communications, financial services, healthcare & life sciences, media and entertainment, manufacturing, semiconductor, and technology industries.",
-          jobPosted: [1, 2, 3, 4, 5, 19, 20],
+          jobPosted: [1, 2, 3, 4, 5, 19, 20, 21],
         },
         {
           id: 2,

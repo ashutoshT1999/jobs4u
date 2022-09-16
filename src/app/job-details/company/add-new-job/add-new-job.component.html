@@ -10,7 +10,7 @@
     <form class="row" [formGroup]="newJob">
         <mat-form-field appearance="outline" class="col-md-4">
             <mat-label>Job Title</mat-label>
-            <input matInput type="text" formControlName="title">
+            <input matInput type="text" formControlName="job_title">
             <mat-error>
                 * This field is required
             </mat-error>
@@ -18,7 +18,7 @@
 
         <mat-form-field appearance="outline" class="col-md-4" >
             <mat-label>Job Location</mat-label>
-            <input matInput type="text" formControlName="location">
+            <input matInput type="text" formControlName="city">
             <mat-error>
                 * This field is required
             </mat-error>
@@ -26,7 +26,7 @@
 
         <mat-form-field appearance="outline" class="col-md-4" >
             <mat-label>Designation</mat-label>
-            <input matInput type="text" formControlName="designation">
+            <input matInput type="text" formControlName="country">
             <mat-error>
                 * This field is required
             </mat-error>
@@ -34,21 +34,14 @@
 
         <mat-form-field appearance="outline" class="col-md-4" >
             <mat-label>Category</mat-label>
-            <mat-select formControlName="category">
-                <mat-option value="Development">Development</mat-option>
-                <mat-option value="IT & Networking">IT & Networking</mat-option>
-                <mat-option value="Data Science">Data Science</mat-option>
-                <mat-option value="Marketing">Marketing</mat-option>
-                <mat-option value="Office Productivity">Office Productivity</mat-option>
-                <mat-option value="Business">Business</mat-option>
-                <mat-option value="Lifestyle">Lifestyle</mat-option>
-                <mat-option value="Cyber Security">Cyber Security</mat-option>
+            <mat-select [(value)] = "newJob.value.category" formControlName="category">
+                <mat-option *ngFor="let option of jobOptions" value="option">{{option}}</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="col-md-4" >
             <mat-label>Last Date</mat-label>
-            <input matInput type="date" formControlName="lastDate">
+            <input matInput type="date" formControlName="valid_through">
             <mat-error>
                 * This field cannot be empty
             </mat-error>
@@ -56,8 +49,8 @@
 
         <mat-form-field appearance="outline" class="col-md-4">
             <mat-label>CTC</mat-label>
-            <input matInput type="text" formControlName="ctc">
-            <mat-error *ngIf="newJob.get('ctc')!.errors!==null && newJob.get('ctc')!.errors!['required']">
+            <input matInput type="text" formControlName="salary_offered">
+            <mat-error *ngIf="newJob.get('salary_offered')!.errors!==null && newJob.get('salary_offered')!.errors!['required']">
                 * This field is required
             </mat-error>
         </mat-form-field>
@@ -82,7 +75,7 @@
 
         <mat-form-field appearance="outline" class="col-md-4">
             <mat-label>Skills</mat-label>
-            <mat-chip-list class="custom-chip-margin" #chipList aria-label="Video keywords" multiple formControlName="skills">
+            <mat-chip-list class="custom-chip-margin" #chipList aria-label="Video keywords" multiple formControlName="required_skills">
                 <mat-chip class="custom-chip"
                     *ngFor="let keyword of keywords"
                     [selected]="keyword"
@@ -95,7 +88,7 @@
                 </mat-chip>
             <input matInput type="text" placeholder="New keyword..."
             [matChipInputFor]="chipList"
-            (matChipInputTokenEnd)="addKeywordFromInput($event)" formControlName="ctc">
+            (matChipInputTokenEnd)="addKeywordFromInput($event)" formControlName="required_skills">
             </mat-chip-list>
             
         </mat-form-field>
@@ -110,7 +103,7 @@
 
         <mat-form-field appearance="outline" class="col-md-6">
             <mat-label>Roles and Responsibility</mat-label>
-            <textarea matInput rows="7" formControlName="description"></textarea>
+            <textarea matInput rows="7" formControlName="roleAndResponsibility"></textarea>
             <mat-error>
                 * This field is required
             </mat-error>
