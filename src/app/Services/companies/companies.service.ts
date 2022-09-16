@@ -35,5 +35,13 @@ export class CompaniesService implements CanDeactivate<EditCompanyComponent>, On
         else return true;
 
     }
+    getProducts(): Observable<any> {
+        return this._http.get<any>(this.companiesDataURL);
+    }
+
+    createProduct(companies: any): Observable<any> {
+        companies.id = 0;
+        return this._http.post<any>(this.companiesDataURL, companies);
+    }
 
 }

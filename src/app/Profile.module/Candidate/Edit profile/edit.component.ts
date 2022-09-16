@@ -19,6 +19,7 @@ export class EditComponent implements OnInit {
     if (this.editCandidate.valid) {
       this._snackBar.open("Data saved succesfully.", "OK");
       this.isSubmitted = true;
+      this.submit(this.editCandidate);
     }
     else {
       this._snackBar.open("Please fill all the form details carefully", "OK");
@@ -32,7 +33,7 @@ export class EditComponent implements OnInit {
       this._candidate.getCandidatesDatabyAPI().subscribe((candidateData) => {
         this.userData = candidateData.filter(x => x.email == data);
         this.setDefault();
-        
+
       })
     })
 
@@ -69,21 +70,22 @@ export class EditComponent implements OnInit {
       id: '',
       password: '',
       firstName: this.userData[0].firstName,
-      middleName:  this.userData[0].middleName,
-      lastName:  this.userData[0].lastName,
-      bio:  this.userData[0].bio,
-      location:  this.userData[0].location,
-      education:  this.userData[0].education,
-      email:  this.userData[0].email,
-      dob:  this.userData[0].dob,
-      resume:  '',
-      contactNumber:  this.userData[0].contactNumber,
+      middleName: this.userData[0].middleName,
+      lastName: this.userData[0].lastName,
+      bio: this.userData[0].bio,
+      location: this.userData[0].location,
+      education: this.userData[0].education,
+      email: this.userData[0].email,
+      dob: this.userData[0].dob,
+      resume: '',
+      contactNumber: this.userData[0].contactNumber,
     };
 
     this.editCandidate.setValue(details);
   }
-
-
-
+  submit(form: FormGroup) {
+        this._candidate.CandidateDataSignUp$.next(form.value);
+  }
 
 }
+

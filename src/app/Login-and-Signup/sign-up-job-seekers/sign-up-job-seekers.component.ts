@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ICandidate } from 'src/app/Models/candidate.interface';
 import { CandidatesService } from 'src/app/Services/candidates/candidates.service';
 import { CompaniesService } from 'src/app/Services/companies/companies.service';
 
@@ -17,6 +18,7 @@ export class SignUpJobSeekersComponent implements OnInit {
   userData: any[] = [];
   constructor(private _fb: FormBuilder, private _candidate: CandidatesService, private _company: CompaniesService, private _router: Router) { }
   ngOnInit(): void {
+   
     this.SignupJobSeekersForm = this._fb.group({
 
       email: ['', [Validators.required, Validators.email]],
@@ -29,19 +31,29 @@ export class SignUpJobSeekersComponent implements OnInit {
 
   submit(form: FormGroup) {
     if (form.valid) {
-      // if (form.value.email == "sagar.singh@gmail.com" || form.value.email == "ashu.tiwari@gmail.com" || form.value.email == "anki.patel@gmail.com" || form.value.email == "dibs.ghosh@gmail.com") {
+      this._company.Loggedin$.next(true);
+      this._candidate.getCandidatesDatabyAPI().subscribe((candidateData) => {
 
-      //   this._candidate.userID(form.value.email);
-      //   this._company.Loggedin$.next(true);
-      //   this._candidate.getCandidatesDatabyAPI().subscribe((candidateData) => {
-      //     this.userData = candidateData.filter(x => x.email == form.value.email);
-      //     this._company.userName$.next(this.userData[0].firstName + " " + this.userData[0].middleName + " " + this.userData[0].lastName)
 
-      //   })
+      })
+      this._company.userName$.next(form.value.email);
       this._router.navigate(['/candidateEdit']);
+
+
+
     }
-
   }
+  addProduct() {
+    const data = {
+      email: this.SignupJobSeekersForm.value.email,
+      password: this.SignupJobSeekersForm.value.password
+    };
+    this._candidate.createProduct(data).subscribe(response => {
+      console.log(response);
+    });
+    this._candidate.getProducts().subscribe((candidate) => {
 
+      console.log("this is via HTTP" + candidate);
+    })
+  }
 }
-
