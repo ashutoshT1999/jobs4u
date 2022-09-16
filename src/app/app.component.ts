@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     this._data.onLanding$.subscribe(data => {
       this.onLanding = data;
     })
-   
+    
   }
  
 

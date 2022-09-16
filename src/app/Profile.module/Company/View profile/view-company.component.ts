@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { combineAll } from 'rxjs';
 import { ICompany } from 'src/app/Models/company.interface';
 import { CompaniesService } from 'src/app/Services/companies/companies.service';
@@ -29,6 +29,7 @@ export class ViewCompanyComponent implements OnInit {
         this.companyDataBySubject = companyData.filter(x => x.emailID == data);
       })
     })
+    this._company.onCompanies$.next(true);
 
   }
 

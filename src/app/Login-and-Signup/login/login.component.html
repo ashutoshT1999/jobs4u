@@ -35,7 +35,10 @@
 
                     <div class="center margin-top ">
                         <button mat-raised-button class="primarybtn" type="submit"
-                            style="background-color: black;color:white ;" (click)="loggedin()">Login</button>
+                            style="background-color: black;color:white ;">Login</button>
+                    </div>
+                    <div class="center margin-top ">
+                        <ng-container *ngIf="!Loggedin"><span style="color: red;font-weight:bolder ;">User not found ! If new , then Sign Up.</span></ng-container>
                     </div>
                     <div class="row margin-top text-center">
                         <label style="font-size: 15px;">New to our website? <a routerLink="/mainSignup">Sign

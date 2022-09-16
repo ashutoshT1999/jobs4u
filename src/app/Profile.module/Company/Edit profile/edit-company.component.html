@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-center" style="padding-top: 50px;">
-    <form id="editcandidate" [formGroup]="editCompany">
+    <form id="editcandidate" [formGroup]="editCompany" >
         <label for="productForm"
             style="margin-bottom:20px;padding-left: 24px;font-weight: 700  ;font-size:30px;">Company Information</label>
         <div class="d-flex flex-column">
@@ -98,10 +98,10 @@
             <div class="d-flex flex-row">
                 <div style="padding-left: 24px;padding-top:30px ;">
                     <button style="width:120px;background-color: black;color: white;" mat-raised-button
-                        type="submit"  (click)="routeView()">Save</button>
+                        type="submit" (click)="openSnackBar()">Save</button>
                 </div>
                 <div style="padding-left: 24px;padding-top:30px;">
-                    <button style="width:150px;background-color: white;color: black;" mat-raised-button (click)="routeView()">Go to Dashboard</button>
+                    <button style="width:150px;background-color: white;color: black;" mat-raised-button routerLink="/companyView">Go to Dashboard</button>
                 </div>
 
             </div>
