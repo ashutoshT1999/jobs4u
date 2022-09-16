@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { CandidatesService } from './Services/candidates/candidates.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { CandidatesService } from './Services/candidates/candidates.service';
 export class AppComponent implements OnInit {
   title = 'jobs4u';
   onLanding:any=true;
-  constructor(private _data: CandidatesService) {
+
+  constructor(private _data: CandidatesService) {  
 
   }
+
+
+
   ngOnInit() {
     this._data.onLanding$.subscribe(data => {
       this.onLanding = data;

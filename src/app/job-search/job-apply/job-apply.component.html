@@ -61,13 +61,14 @@
     <div class="row">      
       <div class="col file-input-container">
         <label>Upload your Resume <span class="text-danger">*</span></label>
-        <input type="file" accept=".pdf,.doc,.docx" formControlName="resume">             
+        <!-- <input type="file" accept=".pdf,.doc,.docx" formControlName="resume">              -->
+        <input type="file" formControlName="resume">             
       </div>  
       <span class="upload-resume-error" *ngIf="jobApplicationForm.touched && jobApplicationForm.get('resume')!.errors !== null && jobApplicationForm.get('resume')!.errors!['required'] ">Resume is required</span>
     </div>    
 
     <div class="row mt-4 ">
-      <button mat-raised-button type="submit" class="ms-3 primarybtn" >Apply</button>
+      <button mat-raised-button color="primary" type="submit" class="ms-3 primarybtn" >Apply</button>
       <button mat-raised-button type="button" class="ms-3 secondarybtn" (click)="back()">Back</button>
     </div>
   </form>

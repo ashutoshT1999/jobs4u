@@ -13,6 +13,7 @@ export class SignupCompanyComponent implements OnInit, OnDestroy {
 
   SignupCompanyForm!: FormGroup;
   userData: any[] = [];
+
   constructor(private _fb: FormBuilder, private _candidate: CandidatesService, private _company: CompaniesService, private _router: Router) { }
 
   ngOnInit(): void {
@@ -34,18 +35,28 @@ export class SignupCompanyComponent implements OnInit, OnDestroy {
 
   submit(form: FormGroup) {
     if (form.valid) {
+      this._company.Loggedin$.next(true);
+      this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
 
-      if (form.value.email == "Globallogic.company@gmail.com" || form.value.email == "Learnify-Me.company@gmail.com" || form.value.email == "hitachi.company@gmail.com") {
-        this._company.userID(form.value.email);
-        this._company.Loggedin$.next(true);
-        this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
-          this.userData = companyData.filter(x => x.emailID == form.value.email);
-          this._company.userName$.next(this.userData[0].companyName);
-
-        })
-        this._router.navigate(['/companyEdit']);
-      }
+      })
+      this._company.userName$.next(form.value.email);
+      this._router.navigate(['/companyEdit']);
     }
+  }
+  addProduct() {
+    const data = {
+      email: this.SignupCompanyForm.value.email,
+      password: this.SignupCompanyForm.value.password
+    };
+    this._company.createProduct(data).subscribe(response => {
+      console.log(response);
+    });
+    this._company.getProducts().subscribe((companies) => {
 
+      console.log("this is via HTTP" + companies);
+    })
   }
 }
+
+
+
