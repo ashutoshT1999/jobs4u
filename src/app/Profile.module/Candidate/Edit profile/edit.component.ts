@@ -38,6 +38,20 @@ export class EditComponent implements OnInit {
     })
 
   }
+  example={
+    id: "",
+    password: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    email: "",
+    dob: "",
+    resume:"",
+    contactNumber: "",
+    bio:"",
+    education: "",
+    location: "",
+  }
   editCandidate = this._fb.group({
     id: [''],
     password: [''],
@@ -84,7 +98,7 @@ export class EditComponent implements OnInit {
     this.editCandidate.setValue(details);
   }
   submit(form: FormGroup) {
-        this._candidate.CandidateDataSignUp$.next(form.value);
+    this._candidate.CandidateDataSignUp$.next(form.value);
   }
 
 }

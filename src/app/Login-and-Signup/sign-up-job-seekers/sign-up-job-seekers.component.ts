@@ -43,17 +43,4 @@ export class SignUpJobSeekersComponent implements OnInit {
 
     }
   }
-  addProduct() {
-    const data = {
-      email: this.SignupJobSeekersForm.value.email,
-      password: this.SignupJobSeekersForm.value.password
-    };
-    this._candidate.createProduct(data).subscribe(response => {
-      console.log(response);
-    });
-    this._candidate.getProducts().subscribe((candidate) => {
-
-      console.log("this is via HTTP" + candidate);
-    })
-  }
 }
