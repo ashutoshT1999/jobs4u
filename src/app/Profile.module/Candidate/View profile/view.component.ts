@@ -24,14 +24,16 @@ export class ViewComponent implements OnInit {
     appliedJobs: []
   }];
   constructor(private _candidate: CandidatesService) { }
-  
+
   ngOnInit(): void {
     this._candidate.candidateIDsubject$.subscribe((data) => {
       this._candidate.getCandidatesDatabyAPI().subscribe((candidateData) => {
         this.userDataBySubject = candidateData.filter(x => x.email == data);
-        
+
+
       })
     })
+
     this._candidate.onCandidate$.next(true);
   }
 
