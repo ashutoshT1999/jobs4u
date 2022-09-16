@@ -10,7 +10,7 @@ export class CandidatesService implements CanDeactivate<EditComponent> {
     candidateIDsubject$ = new BehaviorSubject("");
     onLanding$ = new BehaviorSubject(true);
     onCandidate$ = new BehaviorSubject(false);
-    CandidateDataSignUp$ = new BehaviorSubject([]);
+    CandidateDataSignUp$ = new Subject();
     candidatesDataURL: string = "api/candidatesData";
 
 
@@ -44,6 +44,6 @@ export class CandidatesService implements CanDeactivate<EditComponent> {
 
     editProduct(candidate: ICandidate): Observable<any> {
         return this._http.put(this.candidatesDataURL, candidate);
-      }
+    }
 
 }
