@@ -39,7 +39,7 @@ export class EditComponent implements OnInit {
 
   }
   example={
-    id: "",
+    id: 0,
     password: "",
     firstName: "",
     middleName: "",
@@ -47,10 +47,11 @@ export class EditComponent implements OnInit {
     email: "",
     dob: "",
     resume:"",
-    contactNumber: "",
+    contactNumber: 0,
     bio:"",
     education: "",
     location: "",
+    appliedJobs:[],
   }
   editCandidate = this._fb.group({
     id: [''],
@@ -100,6 +101,5 @@ export class EditComponent implements OnInit {
   submit(form: FormGroup) {
     this._candidate.CandidateDataSignUp$.next(form.value);
   }
-
 }
 
