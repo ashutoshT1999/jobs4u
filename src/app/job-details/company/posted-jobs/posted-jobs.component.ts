@@ -49,8 +49,18 @@ export class PostedJobsComponent implements OnInit {
 
   }
 
-  details(){
-    this.dialog.open(PostedJobDialog);
+  details(jobName:string, companyName:string, city:string, country:string, category:string, salary:string, validThrough:string){
+    this.dialog.open(PostedJobDialog, {
+      data: {
+        jobName: jobName,
+        companyName: companyName,
+        city: city,
+        country: country,
+        category: category,
+        salary:salary,
+        validThrough: validThrough
+      }
+    });
   }
 
   routeEdit(id:number){

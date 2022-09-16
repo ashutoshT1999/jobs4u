@@ -65,6 +65,9 @@
     <mat-divider style="width: 100%;"></mat-divider>
 <ng-container *ngFor="let job of jobData">
 <div class="body">
+    <div *ngIf="job.isClosed" class="overlay">
+
+    </div>
     <header>
         <h2>{{job.job_title}}</h2>
         <h5>{{job.company_name}}, {{job.city}}, {{job.country}}</h5>
@@ -76,20 +79,23 @@
         <span *ngIf="job.experienceRequired != null">{{job.experienceRequired}}</span>
         <span style="background-color: #00b894;
         color: aliceblue;">{{job.salary_offered}}</span>
-        <span style="background-color: cornflowerblue;
+        <span *ngIf="!job.isClosed" style="background-color: cornflowerblue;
+        color: aliceblue;">Last Date: {{job.valid_through | date: "dd.MM.y"}}</span>
+        <span *ngIf="job.isClosed" style="background-color: red;
         color: aliceblue;">Last Date: {{job.valid_through | date: "dd.MM.y"}}</span>
     </div>
-    <p (click)="details()" class="description">
+    <p (click)="details(job.job_title, job.company_name, job.city, job.country, job.category, job.salary_offered, job.valid_through)" class="description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos officiis quaerat itaque a cupiditate alias dolores, et accusamus, repellat non, doloremque architecto corrupti odit. Quia tenetur alias eveniet quisquam nam?
         Provident exercitationem sint adipisci perferendis, error quis deserunt harum aut alias nemo pariatur eveniet sed hic autem facere ut. Nisi odit quos vel voluptates nobis inventore veritatis fugiat ipsa nostrum?
     </p>
     <div class="call-to-action">
-        <button mat-raised-button (click)="routeEdit(job.id)" class="primarybtn">Edit</button>
-        <button mat-raised-button class="secondarybtn mx-4 col-md-auto" disabled>Applicants (2)</button>
-        <button mat-raised-button class="secondarybtn close">Close Job</button>
+        <button mat-raised-button *ngIf="!job.isClosed" (click)="routeEdit(job.id)" class="primarybtn">Edit</button>
+        <button mat-raised-button *ngIf="!job.isClosed" class="secondarybtn mx-4 col-md-auto" disabled>Applicants ({{job.totalApplicationCount}})</button>
+        <button mat-raised-button *ngIf="!job.isClosed" (click)="job.isClosed = !job.isClosed" class="secondarybtn close">Close Job</button>
+        <button mat-raised-button *ngIf="job.isClosed" (click)="job.isClosed = !job.isClosed;" class="secondarybtn open">Open Job</button>
     </div>
     <div class="float-details">
-        <span class="link" (click)="details()">More Details...</span>
+        <span class="link" (click)="details(job.job_title, job.company_name, job.city, job.country, job.category, job.salary_offered, job.valid_through)">More Details...</span>
     </div>
 </div>
 </ng-container>
