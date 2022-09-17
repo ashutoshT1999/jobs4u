@@ -78,7 +78,7 @@
         <span style="background-color: cornflowerblue;
         color: aliceblue;">Last Date: {{job.valid_through | date: "dd.MM.y"}}</span>
     </div>
-    <p class="description" (click)="details()">
+    <p class="description" (click)="details(job.job_title, job.company_name, job.city, job.country, job.category, job.salary_offered, job.valid_through)">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos officiis quaerat itaque a cupiditate alias dolores, et accusamus, repellat non, doloremque architecto corrupti odit. Quia tenetur alias eveniet quisquam nam?
         Provident exercitationem sint adipisci perferendis, error quis deserunt harum aut alias nemo pariatur eveniet sed hic autem facere ut. Nisi odit quos vel voluptates nobis inventore veritatis fugiat ipsa nostrum?
     </p>
@@ -86,7 +86,7 @@
         <div>Accepted</div>
     </div>
     <div class="float date">
-        <span class="link" (click)="details()">More Details...</span>
+        <span class="link" (click)="details(job.job_title, job.company_name, job.city, job.country, job.category, job.salary_offered, job.valid_through)">More Details...</span>
     </div>
 </div>
 </ng-container>

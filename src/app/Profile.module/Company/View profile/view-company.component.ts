@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { combineAll } from 'rxjs';
 import { ICompany } from 'src/app/Models/company.interface';
 import { CompaniesService } from 'src/app/Services/companies/companies.service';
@@ -27,9 +27,9 @@ export class ViewCompanyComponent implements OnInit {
     this._company.companyIDsubject$.subscribe((data) => {
       this._company.getCompaniesDatabyAPI().subscribe((companyData) => {
         this.companyDataBySubject = companyData.filter(x => x.emailID == data);
-        console.log(this.companyDataBySubject);
       })
     })
+    this._company.onCompanies$.next(true);
 
   }
 

@@ -10,6 +10,9 @@ export interface IJob{
   valid_through: string;
   isClosed?: boolean;
   salary_offered: string;
+  description?: string;
+  roleAndResponsibility?:string;
+  numberofOpenings?:number;
   job_description: string;
   required_skills: string;
   experienceRequired?: number;

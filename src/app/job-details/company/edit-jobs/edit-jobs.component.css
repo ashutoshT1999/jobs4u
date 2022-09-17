@@ -10,7 +10,6 @@ header > h5{
     right: 0;
 }
 
-/* .container{
-    /* margin: 1rem; */
-    /* max-width: 50%; 
-}*/
+.container{
+    margin-top: 1rem;
+}

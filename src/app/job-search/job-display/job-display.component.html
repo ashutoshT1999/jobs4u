@@ -1,11 +1,11 @@
-
 <div class="view-job-container my-3 mx-3 p-3 border border-1 rounded-top">
   <div class="view-job-header p-2 border-bottom border-2">
     <h2 class="job-title">{{ job.job_title }} </h2>
     <p class="company-name">{{ job.company_name }} </p>
     <p class="location">{{ job.city + ', ' + job.country }}</p>
     <p class="salary">{{ job.salary_offered }} </p>
-    <button mat-raised-button class="my-2 primarybtn" [routerLink]="['/job/apply/',job.id]">Apply Now</button>
+    <button mat-raised-button color="primary" class="my-2 primarybtn" [routerLink]="['/job/apply/',job.id]">Apply Now</button>
+    <!-- <button mat-raised-button color="primary" class="my-2 primarybtn" (click)="goToApply(job.id)">Apply Now</button> -->
   </div>
   <div class="view-job-body p-2">
     <h3 class="fs-5">Job Description</h3>
@@ -13,8 +13,4 @@
     <h3 class="fs-5">Required Skills</h3>
     <div [innerHtml]="job.required_skills"></div>
   </div>
-  <!-- <div class="view-job-footer border-top">
-  <button mat-raised-button color="primary" class="my-2 mx-auto">Apply Now</button>
-  </div> -->
-
 </div>
