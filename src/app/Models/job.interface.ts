@@ -14,7 +14,7 @@ export interface IJob{
   roleAndResponsibility?:string;
   numberofOpenings?:number;
   job_description: string;
-  required_skills: string;
+  required_skills: '';
   experienceRequired?: number;
   totalApplicationCount?: number;
   html_job_description: string;

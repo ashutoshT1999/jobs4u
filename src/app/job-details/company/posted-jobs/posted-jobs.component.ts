@@ -42,6 +42,7 @@ export class PostedJobsComponent implements OnInit {
     })
 
     this._jobs.getJobList().subscribe((list) => {
+      console.log(list);
       this.jobData = list.filter(x => this.userDataBySubject.jobPosted.includes(x.id))
       console.log(this.jobData);
     })
