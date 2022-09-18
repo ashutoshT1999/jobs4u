@@ -1,6 +1,6 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
-import { Observable, Subject } from "rxjs";
+import { catchError, Observable, Subject, throwError } from "rxjs";
 import { IJob } from "src/app/Models/job.interface";
 
 @Injectable()
@@ -36,5 +36,68 @@ export class JobsServices implements OnInit{
   getJobList():Observable<IJob[]>{
     return this._http.get<IJob[]>(this.jobURL)
   }
+
+  createEmployeebyApi(_job:IJob){
+    console.log(_job);  
+      let httpheaders=new HttpHeaders()  
+      .set('Content-type','application/Json');  
+      let options={  
+        headers:httpheaders 
+      };  
+      return this._http.post<IJob>(this.jobURL,_job,options);  
+    // this._http.post<IJob>(this.jobURL,_job,
+    //     {
+    //         headers:new HttpHeaders({
+    //             'Content-Type':'application/json'
+    //         })
+    //     })
+    //     .pipe(catchError(this.handleError));
+        setTimeout(() => (console.log("timeout")), 1000);
+        this.getJobList().subscribe((data) =>{
+          console.log(data);
+          
+        })
+        return true;
+}
+
+updateEmployeebyApi(_job:IJob){
+  console.log(_job);
+  this._http.put<IJob>(`${this.jobURL}/${_job.id}`,_job,
+      {
+          headers:new HttpHeaders({
+              'Content-Type':'application/json'
+          })
+      })
+      .pipe(catchError(this.handleError));
+
+}
+
+DeleteEmployeebyApi(id:number){
+  
+  this._http.delete(`${this.jobURL}/${id}`)
+      .pipe(catchError(this.handleError));
+
+}
+
+  private handleError(errorResponse:HttpErrorResponse){
+    console.log(errorResponse);
+
+   if(errorResponse.error  instanceof ErrorEvent)
+   {
+       console.log(errorResponse.message);
+       // Client side error
+   }
+   else
+   {
+       console.log(errorResponse.message);
+       // server side
+   }
+   //return new ErrorObservable('')
+    return throwError(()=>{
+    return 'Something wrong occur!!';
+ });
+ 
+
+}
 
 }

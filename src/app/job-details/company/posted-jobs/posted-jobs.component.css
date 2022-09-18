@@ -5,6 +5,18 @@
     border-radius: 0.25rem;
 }
 
+header>div{
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+header>span{
+    position: absolute;
+
+}
+
 .body{
     margin: 1rem 4rem;
     padding: 2rem;
@@ -106,5 +118,22 @@ button{
     background-color: rgba(93, 93, 93, 0.341);
     z-index: 1;
     border-radius: inherit;
+}
+
+header>div>h2{
+    display: inline-block;
+    margin: 0;
+}
+
+#expired{
+    top: 20 !important;
+    left: 100 !important;
+    font-size: 0.75rem;
+    display: inline-block;
+    width: max-content;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    background-color: rgb(246, 246, 246); 
+    border-radius: 1rem;
 }
 

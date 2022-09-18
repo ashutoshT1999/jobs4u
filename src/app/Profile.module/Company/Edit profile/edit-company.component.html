@@ -1,10 +1,10 @@
-<div class="d-flex align-items-center justify-content-center" style="padding-top: 50px;">
+<div class="d-flex align-items-center justify-content-center" style="padding-top: 80px;">
     <form id="editcandidate" [formGroup]="editCompany" >
         <label for="productForm"
-            style="margin-bottom:20px;padding-left: 24px;font-weight: 700  ;font-size:30px;">Company Information</label>
+            style="margin-bottom:20px;padding-left: 7px;font-weight: 700  ;font-size:30px;">Company Particulars</label>
         <div class="d-flex flex-column">
             <div class="d-flex flex-row">
-                <div class="p-4">
+                <div class="" style="margin-right: 30px;">
                     <mat-form-field class="example-fill-width" appearance="outline" style="width: 235px;" >
                         <mat-label>Company name</mat-label>
                         <input matInput value="companyName" name="companyName" formControlName="companyName">
@@ -13,7 +13,7 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="p-4">
+                <div class="" style="margin-right: 30px;">
                     <mat-form-field appearance="outline" style="width: 235px;">
                         <mat-label>Select Company Type</mat-label>
                         <mat-select multiple formControlName="companyType">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="d-flex flex-row">
-                <div class="p-4">
+                <div class="" style="margin-right: 30px;">
                     <mat-form-field appearance="outline" style="width: 235px;">
                         <mat-label>Company Office(s)</mat-label>
                         <mat-select multiple formControlName="companyOffices">
@@ -44,7 +44,7 @@
                         </mat-error>
                       </mat-form-field>
                 </div>
-                <div class="p-4">
+                <div class="" style="margin-right: 30px;">
                     <mat-form-field appearance="outline" style="width: 235px;">
                         <mat-label>Hiring Domain(s)</mat-label>
                         <mat-select multiple formControlName="hiringDomains">
@@ -65,14 +65,14 @@
             </div>
             <div class="d-flex flex-row">
 
-                <div class="p-4">
+                <div class="" style="margin-right: 30px;">
                     <mat-form-field appearance="outline" style="width: 235px;">
                         <mat-label>Enter your email</mat-label>
                         <input matInput placeholder="pat@example.com" required formControlName="emailID">
                         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="p-4">
+                <div class="" style="margin-right: 30px;">
                     <mat-form-field class="example-full-width" appearance="outline" style="width: 235px;">
                         <mat-label>Contact Number</mat-label>
                         <input matInput value="contactInfo" name="contactInfo" formControlName="contactInfo">
@@ -86,7 +86,7 @@
             <div class="d-flex flex-column justify-content-center">
                 <div>
                     <mat-form-field class="example-full-width" appearance="outline"
-                        style="width: 97%;padding-left: 21px;">
+                        style="width: 95%;">
                         <mat-label>About Company</mat-label>
                         <textarea matInput placeholder="Ex. It makes me feel..." formControlName="aboutCompany"></textarea>
                         <mat-error>
@@ -96,8 +96,8 @@
                 </div>
             </div>
             <div class="d-flex flex-row">
-                <div style="padding-left: 24px;padding-top:30px ;">
-                    <button style="width:120px;background-color: black;color: white;" mat-raised-button
+                <div style="padding-left: 7px;padding-top:30px ;">
+                    <button style="width:120px;background-color: #3f51b5;color: white;" mat-raised-button
                         type="submit" (click)="openSnackBar()">Save</button>
                 </div>
                 <div style="padding-left: 24px;padding-top:30px;">
