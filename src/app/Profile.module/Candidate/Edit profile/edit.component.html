@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-center" style="padding-top: 50px;" >
+<div class="d-flex align-items-center justify-content-center" style="padding-top: 50px;">
     <form id="editcandidate" [formGroup]="editCandidate">
         <label for="productForm"
             style="margin-bottom:20px;padding-left: 24px;font-weight: 700  ;font-size:30px;">Profile Information</label>
@@ -7,7 +7,7 @@
                 <div class="p-4">
                     <mat-form-field class="example-fill-width" appearance="outline" style="width:235px ;">
                         <mat-label>Firstname</mat-label>
-                        <input matInput name="firstName" formControlName="firstName" >
+                        <input matInput name="firstName" formControlName="firstName">
                         <mat-error>
                             <span>Firstname is<strong> required</strong></span>
                         </mat-error>
@@ -99,7 +99,8 @@
             </div>
             <div class="d-flex flex-column justify-content-center">
                 <div>
-                    <mat-form-field class="example-full-width" appearance="outline" style="width: 93%;padding-left: 21px;">
+                    <mat-form-field class="example-full-width" appearance="outline"
+                        style="width: 93%;padding-left: 21px;">
                         <mat-label>Description/Bio</mat-label>
                         <textarea matInput placeholder="Ex. It makes me feel..." formControlName="bio"></textarea>
                         <mat-error>
@@ -110,10 +111,12 @@
             </div>
             <div class="d-flex flex-row">
                 <div style="padding-left: 24px;padding-top:30px ;">
-                    <button style="width:120px;background-color: black;color: white;" mat-raised-button (click)="openSnackBar()">Save</button>
+                    <button style="width:120px;background-color: black;color: white;" mat-raised-button
+                        (click)="openSnackBar()">Save</button>
                 </div>
                 <div style="padding-left: 24px;padding-top:30px;">
-                    <button style="width:150px;background-color: white;color: black;" mat-raised-button (click)="routeView()">Go to Dashboard</button>
+                    <button style="width:150px;background-color: white;color: black;" mat-raised-button
+                        (click)="routeView()">Go to Dashboard</button>
                 </div>
 
             </div>

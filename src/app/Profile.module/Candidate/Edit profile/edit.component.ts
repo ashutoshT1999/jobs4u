@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
 
   isSubmitted: boolean = false;
   userData: any[] = [];
+  valueChange:boolean=false;
 
   constructor(private _fb: FormBuilder, private _route: Router, private _snackBar: MatSnackBar, private _candidate: CandidatesService) { }
   openSnackBar() {
@@ -38,6 +39,7 @@ export class EditComponent implements OnInit {
     })
 
   }
+
   editCandidate = this._fb.group({
     id: [''],
     password: [''],
@@ -84,8 +86,7 @@ export class EditComponent implements OnInit {
     this.editCandidate.setValue(details);
   }
   submit(form: FormGroup) {
-        this._candidate.CandidateDataSignUp$.next(form.value);
+    this._candidate.CandidateDataSignUp$.next(form.value);
   }
-
 }
 
