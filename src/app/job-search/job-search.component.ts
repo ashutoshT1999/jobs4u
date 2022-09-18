@@ -69,10 +69,10 @@ export class JobSearchComponent implements OnInit {
   }
 
   search(){
-    this.hideResults = false;
     let title = this.jobControl.value?this.jobControl.value:'all'
     let location = this.locationControl.value?this.locationControl.value:'all'
     this.jobListReference.filterJob(title,location)
+    setTimeout(()=>this.hideResults = false, 1000)
   }
 
   showResult(value:boolean){

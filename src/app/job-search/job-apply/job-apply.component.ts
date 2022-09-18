@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICandidate } from 'src/app/Models/candidate.interface';
 import { IJob } from 'src/app/Models/job.interface';
@@ -33,8 +34,10 @@ export class JobApplyComponent implements OnInit {
     html_job_description: '',
     totalApplicationCount: 0
   }
+  
   constructor(private _formBuilder:FormBuilder, private _router:Router, private _route:ActivatedRoute,
-    private _candidate:CandidatesService, private _company:CompaniesService, private _http:HttpClient) { }
+    private _candidate:CandidatesService, private _company:CompaniesService, private _http:HttpClient,
+    private _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -62,11 +65,7 @@ export class JobApplyComponent implements OnInit {
       resume:['', [Validators.required]],
     });
 
-    if(this.isLoggedIn){
-      
-      console.log('in if',this.candidateDetails, this.isLoggedIn);
-    }
-    else {
+    if(!this.isLoggedIn){      
       this._router.navigate(['/login'])
     }
   }
@@ -80,13 +79,11 @@ export class JobApplyComponent implements OnInit {
       if(id) {
         // updating job
         this._http.get<IJob>('api/jobs/'+id)!.subscribe((data:IJob)=>{
-          console.log('data',data);
           this.jobData = data;
           this.jobData.totalApplicationCount =  1 + data.totalApplicationCount!;
-          console.log("job data ",this.jobData)
           this._http.put('api/jobs/'+this.jobData.id, this.jobData,{
             headers:new HttpHeaders({ 'Content-Type':'application/json' })
-          }).subscribe(data=>console.log(data));
+          }).subscribe();
         })
         // updating candidate details 
         this._http.get<ICandidate>('api/candidatesData/'+this.candidateDetails.id)
@@ -94,14 +91,19 @@ export class JobApplyComponent implements OnInit {
           data.appliedJobs.push(id);
           this._http.put('api/candidatesData/'+this.candidateDetails.id,data, {
             headers: new HttpHeaders({'Content-Type':'application/json'})
-          }).subscribe(data=>console.log(data))
+          }).subscribe()
         })
+
         setTimeout(()=>{
-          this._http.get('api/jobs/'+id)!.subscribe((data:any)=>console.log("another j",data))
-        },2000)
-        setTimeout(()=>{
-          this._http.get('api/candidatesData/'+this.candidateDetails.id)!.subscribe((data:any)=>console.log("another c",data))
-        },2000)
+          this._http.get('api/jobs/'+id)!.subscribe((data:any)=>{
+            if(data.totalApplicationCount >= this.jobData.totalApplicationCount!) {
+              this._snackBar.open('Applied Successfully ✔', 'Done', {
+                duration:5000,
+                panelClass: ['green-snackbar'],
+              })
+            }
+          })
+        },1000)
         
       }
     }

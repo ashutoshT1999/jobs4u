@@ -27,3 +27,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: white;
     color:black;
 }
+
+.green-snackbar {
+  background:#e5fff1;
+  color: #0c913d;
+}
+.green-snackbar button {
+  background-color: #0c913d;;
+  color: #e5fff1;
+  border: none;
+}

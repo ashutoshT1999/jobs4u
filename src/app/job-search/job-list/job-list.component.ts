@@ -47,8 +47,8 @@ export class JobListComponent implements OnInit {
     this._jobService.getJobList().subscribe(dataList=> {      
       this.jobList=dataList.filter((obj:any)=>(title === obj.category || title === 'all') && (location === obj.city || location === 'all'));      
       if(this.jobList.length) {
-        this.resultFoundEvent.emit(true);
         this._jobService.displayJob$.next(this.jobList[0]);
+        this.resultFoundEvent.emit(true);
       } else {
         this.resultFoundEvent.emit(false);
       }
