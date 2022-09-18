@@ -17,7 +17,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="col-md-4" >
-            <mat-label>Job Location</mat-label>
+            <mat-label>City</mat-label>
             <input matInput type="text" formControlName="city">
             <mat-error>
                 * This field is required
@@ -25,7 +25,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="col-md-4" >
-            <mat-label>Designation</mat-label>
+            <mat-label>Country</mat-label>
             <input matInput type="text" formControlName="country">
             <mat-error>
                 * This field is required
@@ -35,7 +35,7 @@
         <mat-form-field appearance="outline" class="col-md-4" >
             <mat-label>Category</mat-label>
             <mat-select [(value)] = "newJob.value.category" formControlName="category">
-                <mat-option *ngFor="let option of jobOptions" value="option">{{option}}</mat-option>
+                <mat-option *ngFor="let option of jobOptions" value="{{option}}">{{option}}</mat-option>
             </mat-select>
         </mat-form-field>
 
@@ -48,7 +48,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="col-md-4">
-            <mat-label>CTC</mat-label>
+            <mat-label>Salary</mat-label>
             <input matInput type="text" formControlName="salary_offered">
             <mat-error *ngIf="newJob.get('salary_offered')!.errors!==null && newJob.get('salary_offered')!.errors!['required']">
                 * This field is required

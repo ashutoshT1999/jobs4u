@@ -66,14 +66,15 @@
 <ng-container *ngFor="let job of jobData">
 <div class="body">
     <div *ngIf="job.isClosed" class="overlay">
-
     </div>
     <header>
-        <h2>{{job.job_title}}</h2>
+        <div><h2>{{job.job_title}}</h2><span id="expired" style="background-color: rgb(66, 66, 66);
+        color: aliceblue;" *ngIf="job.isClosed">Expired</span></div>
         <h5>{{job.company_name}}, {{job.city}}, {{job.country}}</h5>
     </header>
     
     <div class="float-info">
+        
         <span style="    background-color: coral;
         color: aliceblue;">{{job.category}}</span>
         <span *ngIf="job.experienceRequired != null">{{job.experienceRequired}}</span>

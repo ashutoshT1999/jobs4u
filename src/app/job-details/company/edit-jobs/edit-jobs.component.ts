@@ -1,7 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IJob } from 'src/app/Models/job.interface';
 import { JobsServices } from 'src/app/Services/Jobs/jobs.service';
 
@@ -30,7 +31,7 @@ export class EditJobsComponent implements OnInit {
     required_skills: '',
     html_job_description: ''
   }
-  constructor(private _fb:FormBuilder, private _routed:ActivatedRoute, private _job:JobsServices) { }
+  constructor(private _fb:FormBuilder, private _routed:ActivatedRoute, private _router:Router, private _job:JobsServices, private _http:HttpClient) { }
 
   ngOnInit(): void {
     this.keywords.delete('');
@@ -69,8 +70,34 @@ export class EditJobsComponent implements OnInit {
   }
 
   submit(){
+    var date = new Date();
+      var job:IJob ={
+        id: this.jobID,
+        isClosed: false,
+        job_title: this.newJob.value.job_title.toString(),
+        company_name: 'GlobalLogic Pvt Limited.',
+        category: this.newJob.value.category,
+        city: this.newJob.value.city.toString(),
+        country: this.newJob.value.country.toString(),
+        post_date: `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`,
+        job_type: '',
+        description: this.newJob.value.description,
+        roleAndResponsibility: this.newJob.value.description,
+        valid_through: this.newJob.value.valid_through,
+        salary_offered: this.newJob.value.salary_offered,
+        job_description: this.newJob.value.description,
+        required_skills: '',
+        html_job_description: ''
+      }
     
     console.log(this.newJob.value.category);
+    this._http.put('api/jobs/'+this.jobID, job,{
+      headers:new HttpHeaders({ 'Content-Type':'application/json' })
+    }).subscribe(data=>console.log(data));
+
+    setTimeout(() => { if(this.newJob.valid){ this._router.navigate(['/postedJobs'])}}, 1000);
+
+
   }
 
 }
